@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash分流详解：开了代理国内网站变慢？实现国内直连国外代理 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="开了代理国内网站变慢？本文大白话讲清全局、规则与直连三种模式区别，提供最小分流配置与规则失效排查思路。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.8;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .step-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .step-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+        .code-block-custom {
+            background: #100e0c;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: #d4af37;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">🏠</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../vpn-proxy.html" class="nav-item">
+                <span class="nav-item-icon">🌐</span>
+                <span>科学上网</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>文章阅读 · Clash分流与模式切换指南</h2>
+            <a href="../vpn-proxy.html" class="btn-sm-ghost">返回科学上网专区</a>
+        </header>
+
+        <main class="content-body">
+            <div class="article-layout-container">
+                <article class="article-card-main">
+                    <h1>🔀 Clash 分流详解：开了代理国内网站变慢？怎么让国内流量直连、国外走代理（2026）</h1>
+                    <div class="article-meta">
+                        <span>发布日期：2026-09-16</span>
+                        <span>阅读时间：约 7 分钟 (1210 字)</span>
+                        <span>核心概念：智能分流 / 规则模式 / GEOIP / 策略组</span>
+                    </div>
+
+                    <p>许多刚接触代理客户端的新手常常遇到这种困惑：开启代理软件之后，访问 Google 或 YouTube 非常顺利，但打开百度、淘宝或 B 站等国内网站却变得异常缓慢，甚至提示加载失败。原因就在于没有正确配置**智能分流模式**。分流是 Clash 区别于经典一键 VPN 的核心优势，本文将大白话拆解分流原理与模式选择。</p>
+
+                    <h2>一、什么是分流？一句话讲清</h2>
+                    <p>分流，就是**给流量按规则指路**：哪些流量走代理出国、哪些流量直接直连留在国内、哪些广告流量直接屏蔽。如果不做分流而使用全局代理，访问国内网站相当于从北京发出的请求绕道美国服务器再返回国内，不仅速度奇慢，还会白白消耗宝贵的机场套餐流量。</p>
+
+                    <h2>二、三大路由模式区别与选型法则</h2>
+                    <div class="step-box">
+                        <div class="step-title">1. 规则模式 (Rule) —— 日常默认选它！</div>
+                        <p>客户端会自动根据规则列表进行判断：访问国内目标走 Direct 直连（不耗流量、速度飞快）；访问境外目标才自动走 Proxy 节点中转。</p>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-title">2. 全局模式 (Global) —— 仅调试排查使用</div>
+                        <p>所有网络流量强制无差别走代理节点，极易导致国内应用卡顿，不适合日常常驻开启。</p>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-title">3. 直连模式 (Direct) —— 等同于暂停代理</div>
+                        <p>所有流量都不经过代理，相当于临时关闭了代理功能，适合临时测试网络原生连接状态。</p>
+                    </div>
+
+                    <h2>三、分流的核心规则骨架</h2>
+                    <p>在底层 YAML 配置文件中，智能分流主要依赖于国内 IP 库与域名规则集：</p>
+                    <div class="code-block-custom">
+rules:<br>
+  - GEOIP,CN,DIRECT       # 匹配中国大陆 IP 自动直连<br>
+  - GEOSITE,google,PROXY  # 谷歌系服务自动走代理<br>
+  - GEOSITE,youtube,PROXY # YouTube 自动走代理<br>
+  - MATCH,PROXY           # 其余未匹配到的境外网站默认兜底走代理
+                    </div>
+
+                    <h2>四、总结与使用建议</h2>
+                    <p>导入任何机场订阅后，第一件事就是确认客户端主页上的路由模式是否处于**“规则模式 (Rule)”**。做好分流不仅能保证国内网站秒开，还能为你节省一半以上的套餐流量。</p>
+                </article>
+
+                <aside class="toc-sidebar">
+                    <div class="toc-header-title">
+                        <span>📑</span>
+                        <span>文章目录</span>
+                    </div>
+                    <ul class="toc-nav-list" id="tocList"></ul>
+                </aside>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
+

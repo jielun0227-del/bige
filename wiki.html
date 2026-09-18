@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科普百科全书 - 节点与协议知识库 | 逼哥机场测评</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .wiki-category-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+        .wiki-category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .wiki-category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .wiki-item-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        .wiki-item-link {
+            background: rgba(11, 15, 23, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+        .wiki-item-link:hover {
+            border-color: var(--border-hover);
+            color: var(--accent-primary);
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/bigejichang_logo.png" alt="逼哥机场测评 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>逼哥机场测评</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="index.html" class="nav-item">
+                <span class="nav-item-icon">🏠</span>
+                <span>网站首页</span>
+            </a>
+            <a href="rankings.html" class="nav-item">
+                <span class="nav-item-icon">🏆</span>
+                <span>机场推荐榜</span>
+            </a>
+            <a href="rankings.html#reviews" class="nav-item">
+                <span class="nav-item-icon">📝</span>
+                <span>机场测评文章</span>
+            </a>
+            
+            <div class="nav-section-title">实用指南</div>
+            <a href="tutorials.html" class="nav-item">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="wiki.html" class="nav-item active">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+            <a href="vpn-proxy.html" class="nav-item">
+                <span class="nav-item-icon">🌐</span>
+                <span>科学上网</span>
+            </a>
+
+            <div class="nav-section-title">关于本站</div>
+            <a href="about.html" class="nav-item">
+                <span class="nav-item-icon">ℹ️</span>
+                <span>关于我们</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科全书 · 看懂机场与网络协议</h2>
+            <a href="index.html" class="btn-sm-ghost">返回首页</a>
+        </header>
+
+        <main class="content-body">
+            <div class="page-hero">
+                <div class="hero-gradient-orb"></div>
+                <div class="hero-title-group">
+                    <h2>看懂机场，<span>从这里开始</span></h2>
+                    <p>从基础概念到技术细节，帮你真正理解科学上网、IEPL/IPLC专线原理与最新协议区别，避免掉坑。</p>
+                </div>
+            </div>
+
+            <!-- Category 1: 新手入门必读 -->
+            <div class="wiki-category-box">
+                <div class="wiki-category-header">
+                    <span style="font-size: 1.5rem;">🧭</span>
+                    <div>
+                        <div class="wiki-category-title">新手入门必读</div>
+                        <span style="font-size: 0.78rem; color: var(--text-muted);">刚接触机场？先看这几篇，少走弯路</span>
+                    </div>
+                </div>
+                <div class="wiki-item-list">
+                    <a href="articles/wiki-what-is-airport.html" class="wiki-item-link"><span>✈️ 什么是机场？基本概念科普</span><span>→</span></a>
+                    <a href="articles/wiki-iplc-vs-iepl.html" class="wiki-item-link"><span>⚡ IPLC vs IEPL：跨境专线有什么区别？</span><span>→</span></a>
+                    <a href="articles/wiki-8-protocols.html" class="wiki-item-link"><span>🔐 8 种主流代理协议对比详解</span><span>→</span></a>
+                    <a href="articles/wiki-avoid-scam.html" class="wiki-item-link"><span>🛡️ 防跑路指南：如何降低机场损失</span><span>→</span></a>
+                    <a href="articles/wiki-nodes-guide.html" class="wiki-item-link"><span>🗺️ 日本、香港、新加坡、美国节点怎么选？</span><span>→</span></a>
+                    <a href="articles/wiki-avoid-pits.html" class="wiki-item-link"><span>🛡️ 2026 年机场选购避坑指南</span><span>→</span></a>
+                </div>
+            </div>
+
+            <!-- Category 2: 客户端与实战技巧 -->
+            <div class="wiki-category-box">
+                <div class="wiki-category-header">
+                    <span style="font-size: 1.5rem;">📶</span>
+                    <div>
+                        <div class="wiki-category-title">客户端与实战技巧</div>
+                        <span style="font-size: 0.78rem; color: var(--text-muted);">选好机场之后，如何高效配置与用好它</span>
+                    </div>
+                </div>
+                <div class="wiki-item-list">
+                    <a href="articles/wiki-client-compare.html" class="wiki-item-link"><span>📱 Shadowrocket vs Stash vs sing-box 横评</span><span>→</span></a>
+                    <a href="articles/wiki-bandwidth-unit.html" class="wiki-item-link"><span>📊 100Mbps 限速到底多快？带宽单位科普</span><span>→</span></a>
+                    <a href="articles/wiki-speedtest-guide.html" class="wiki-item-link"><span>⚡ 机场测速完全指南与延迟丢包测试</span><span>→</span></a>
+                    <a href="articles/wiki-native-ip.html" class="wiki-item-link"><span>🏠 家宽原生 IP 和机房 IP 有什么区别？</span><span>→</span></a>
+                    <a href="articles/wiki-free-airport-risk.html" class="wiki-item-link"><span>⚠️ 免费机场的真相与安全风险</span><span>→</span></a>
+                    <a href="articles/wiki-sub-import.html" class="wiki-item-link"><span>📱 机场订阅链接导入完整步骤</span><span>→</span></a>
+                </div>
+            </div>
+
+            <!-- Category 3: 隐私安全与前沿技术 -->
+            <div class="wiki-category-box">
+                <div class="wiki-category-header">
+                    <span style="font-size: 1.5rem;">🔒</span>
+                    <div>
+                        <div class="wiki-category-title">隐私安全与前沿技术</div>
+                        <span style="font-size: 0.78rem; color: var(--text-muted);">进阶用户关心的隐私防护与最新封锁对抗技术</span>
+                    </div>
+                </div>
+                <div class="wiki-item-list">
+                    <a href="articles/wiki-privacy-protection.html" class="wiki-item-link"><span>🔒 如何真正保护个人上网隐私</span><span>→</span></a>
+                    <a href="articles/wiki-tls-fingerprint.html" class="wiki-item-link"><span>🔥 TLS 指纹识别与对抗技术演进</span><span>→</span></a>
+                    <a href="articles/wiki-proxy-architecture.html" class="wiki-item-link"><span>🌐 深入浅出解析现代网络代理架构</span><span>→</span></a>
+                    <a href="articles/wiki-zero-trust.html" class="wiki-item-link"><span>🔐 零信任时代的加密通信原理</span><span>→</span></a>
+                    <a href="articles/wiki-cloudflare-warp.html" class="wiki-item-link"><span>🌐 Cloudflare WARP 科学上网真相</span><span>→</span></a>
+                    <a href="articles/wiki-ai-anti-proxy.html" class="wiki-item-link"><span>🤖 AI 反代理检测升级解析</span><span>→</span></a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

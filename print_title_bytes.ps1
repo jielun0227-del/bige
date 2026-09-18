@@ -1,0 +1,6 @@
+$bytes = [System.IO.File]::ReadAllBytes("articles/wiki-proxy-architecture.html")
+$str = [System.Text.Encoding]::UTF8.GetString($bytes)
+$idx = $str.IndexOf("<title>")
+$subStr = $str.Substring($idx, 60)
+$subBytes = [System.Text.Encoding]::UTF8.GetBytes($subStr)
+Write-Host ($subBytes -join ' ')

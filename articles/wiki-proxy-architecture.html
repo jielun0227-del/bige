@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深入浅出解析现代网络代理架构 - </title>
+    <meta name="description" content="2026年最新网络代理架构科普：正向代理、反向代理、透明代理、TUN 虚拟网卡分流原理与数据包流向。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 36px; line-height: 1.85; }
+        .article-card-main h1 { font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 16px; color: var(--text-primary); }
+        .article-card-main h2 { font-family: var(--font-serif); font-size: 1.25rem; margin: 28px 0 14px; color: var(--accent-primary); border-bottom: 1px dashed var(--border-color); padding-bottom: 6px; }
+        .article-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); display: flex; gap: 16px; }
+        .arch-card { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; margin: 14px 0; }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt=" Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1></h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>网站首页</span></a>
+            <a href="../rankings.html" class="nav-item"><span class="nav-item-icon">🏆</span><span>机场推荐榜</span></a>
+            <div class="nav-section-title">实用指南</div>
+            <a href="../tutorials.html" class="nav-item"><span class="nav-item-icon">📖</span><span>小白新手教程</span></a>
+            <a href="../wiki.html" class="nav-item active"><span class="nav-item-icon">🔬</span><span>科普百科全书</span></a>
+            <div class="nav-section-title">关于本站</div>
+            <a href="../about.html" class="nav-item"><span class="nav-item-icon">ℹ️</span><span>关于我们</span></a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科 · 深入浅出解析现代网络代理架构</h2>
+            <a href="../wiki.html" class="btn-sm-ghost">返回百科首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>🌐 深入浅出解析现代网络代理架构：从 Socks5 到 TUN 模式</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 6 分钟 (1080 字)</span>
+                    <span>所属分类：隐私安全与前沿技术</span>
+                </div>
+
+                <p>在使用 Clash 或 NekoBox 时，我们常听到正向代理、透明代理、TUN 虚拟网卡等专业术语。理解网络数据包在电脑与服务器之间的流转路径，有助于排查无法上网或 DNS 泄漏问题。</p>
+
+                <h2>一、正向代理与反向代理的区别</h2>
+                <div class="arch-card">
+                    <strong style="color: var(--accent-primary);">1. 正向代理 (Forward Proxy)</strong><br>
+                    客户端（您的电脑）主动通过代理服务器去访问目标网站，代理服务器代表客户端发出请求。我们日常使用的机场即属于正向代理。
+                </div>
+                <div class="arch-card">
+                    <strong style="color: var(--accent-primary);">2. 反向代理 (Reverse Proxy)</strong><br>
+                    服务器端（如 Cloudflare）代表源站接收互联网连接，客户端并不知道真正的源站服务器 IP 地址。
+                </div>
+
+                <h2>二、系统代理 (HTTP/Socks5) 与 TUN 模式的区别</h2>
+                <ul>
+                    <li><strong>系统代理 (System Proxy)</strong>：仅仅修改操作系统的 HTTP/HTTPS 代理环境变量。只有遵循该变量的应用（如 Chrome 浏览器）会走代理，而游戏客户端、命令行终端等通常会绕过代理。</li>
+                    <li><strong>TUN 模式 (Tun Mode)</strong>：在操作系统中创建一张虚拟三层网卡（TUN Device），将系统所有 IP 数据包强行接管拦截。不论软件是否支持代理，都会被强制分流转发，实现全自动全局代理。</li>
+                </ul>
+
+                <div style="margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                    <a href="../wiki.html" class="btn-sm-primary">← 返回科普百科目录</a>
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

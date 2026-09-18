@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科学上网 - 全平台出海指南与核心实战教程 | 逼哥机场测评</title>
+    <meta name="description" content="逼哥机场测评科学上网专题：涵盖 机场推荐、VPN推荐、4K不卡顿、游戏加速、专线机场、IPLC/IEPL、Netflix机场、TikTok加速器、Disney+观看、ChatGPT加速器、Claude专用、Github加速、谷歌搜索 等13大核心需求实战指南。">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 双栏三列外框与侧栏 TOC 布局 */
+        .vpn-page-container {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+        }
+        .vpn-main-articles {
+            flex: 1;
+            min-width: 0;
+        }
+        .section-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+        .vpn-card-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .vpn-card-item:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+        .vpn-card-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .vpn-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .vpn-card-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .badge-num-pill {
+            background: var(--bg-primary);
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-family: var(--font-code);
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        /* --------------------------------------------------------------------------
+           右侧文章目录组件 (Right Sticky Table of Contents)
+           -------------------------------------------------------------------------- */
+        .right-toc-panel {
+            width: 300px;
+            position: sticky;
+            top: 80px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px 22px;
+            flex-shrink: 0;
+        }
+        .toc-panel-head {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-height: calc(100vh - 160px);
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+        .toc-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .toc-list::-webkit-scrollbar-thumb {
+            background: var(--border-hover);
+            border-radius: 4px;
+        }
+        .toc-item-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.84rem;
+            transition: var(--transition);
+        }
+        .toc-item-link:hover {
+            color: var(--text-primary);
+            background: rgba(197, 160, 89, 0.08);
+            transform: translateX(3px);
+        }
+        .toc-item-num {
+            font-size: 0.72rem;
+            font-family: var(--font-code);
+            color: var(--accent-primary);
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 1px 6px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .toc-item-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (max-width: 1200px) {
+            .vpn-page-container {
+                flex-direction: column-reverse;
+            }
+            .right-toc-panel {
+                width: 100%;
+                position: static;
+            }
+            .toc-list {
+                max-height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/bigejichang_logo.png" alt="逼哥机场测评 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>逼哥机场测评</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="index.html" class="nav-item">
+                <span class="nav-item-icon">🏠</span>
+                <span>网站首页</span>
+            </a>
+            <a href="rankings.html" class="nav-item">
+                <span class="nav-item-icon">🏆</span>
+                <span>机场推荐榜</span>
+            </a>
+            <a href="rankings.html#reviews" class="nav-item">
+                <span class="nav-item-icon">📝</span>
+                <span>机场测评文章</span>
+            </a>
+            
+            <div class="nav-section-title">实用指南</div>
+            <a href="tutorials.html" class="nav-item">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="wiki.html" class="nav-item">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+            <a href="vpn-proxy.html" class="nav-item active">
+                <span class="nav-item-icon">🌐</span>
+                <span>科学上网</span>
+            </a>
+
+            <div class="nav-section-title">关于本站</div>
+            <a href="about.html" class="nav-item">
+                <span class="nav-item-icon">ℹ️</span>
+                <span>关于我们</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🌐 科学上网 · 13大核心需求实战指南</h2>
+            <a href="index.html" class="btn-sm-ghost">返回首页</a>
+        </header>
+
+        <main class="content-body">
+            <!-- 精选文章列表 Title -->
+            <div class="section-header-wrap" style="justify-content: center; text-align: center; margin-bottom: 28px;">
+                <div class="section-header-title" style="font-size: 1.4rem;">
+                    <span>🌐</span>
+                    <span>科学上网核心需求精选指南 (13大热门分类)</span>
+                </div>
+            </div>
+
+            <!-- 页面主容器：左侧文章 Card 网格 + 右侧文章目录 TOC -->
+            <div class="vpn-page-container">
+                <!-- 左侧文章网格列表 -->
+                <div class="vpn-main-articles">
+                    <div class="section-grid-2">
+                        <!-- 1: 机场推荐 -->
+                        <div class="vpn-card-item" id="art-1">
+                            <div>
+                                <div class="badge-num-pill">NO. 1</div>
+                                <div class="vpn-card-icon">✈️</div>
+                                <div class="vpn-card-title">2026最新机场推荐指南：如何挑选稳定高速的高性价比代理节点</div>
+                                <div class="vpn-card-text">深度解析 IEPL 专线、BGP 中转、晚高峰带宽压测与防跑路月付原则，助你选到最适合的加速服务商。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1200 字</span>
+                                <a href="articles/kw-jichang-tuijian.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 2: VPN推荐 -->
+                        <div class="vpn-card-item" id="art-2">
+                            <div>
+                                <div class="badge-num-pill">NO. 2</div>
+                                <div class="vpn-card-icon">🔒</div>
+                                <div class="vpn-card-title">2026年商业VPN推荐与机场代理对比评测指南</div>
+                                <div class="vpn-card-text">对比分析传统商用 VPN 与现代 Shadowsocks/Clash 代理机场的技术差异、加密安全性与适用场景。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1190 字</span>
+                                <a href="articles/kw-vpn-tuijian.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 3: 4K不卡顿 -->
+                        <div class="vpn-card-item" id="art-3">
+                            <div>
+                                <div class="badge-num-pill">NO. 3</div>
+                                <div class="vpn-card-icon">🎬</div>
+                                <div class="vpn-card-title">4K不卡顿机场节点挑选法则：晚高峰油管8K与超大带宽配置指南</div>
+                                <div class="vpn-card-text">如何实现 4K 不卡顿与 8K 秒开？解析超高清流媒体加速节点挑选、晚高峰带宽压测与丢包率控制。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1210 字</span>
+                                <a href="articles/kw-4k-bukadun.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 4: 游戏加速 -->
+                        <div class="vpn-card-item" id="art-4">
+                            <div>
+                                <div class="badge-num-pill">NO. 4</div>
+                                <div class="vpn-card-icon">🎮</div>
+                                <div class="vpn-card-title">电竞级游戏加速机场挑选：低延迟、0丢包与UDP协议优化指南</div>
+                                <div class="vpn-card-text">针对外服游戏（Steam / EA / 英雄联盟 / 联机手游）提供低延迟、0 丢包与 Hysteria 2 专线优化方案。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1200 字</span>
+                                <a href="articles/kw-youxi-jiasu.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 5: 专线机场 -->
+                        <div class="vpn-card-item" id="art-5">
+                            <div>
+                                <div class="badge-num-pill">NO. 5</div>
+                                <div class="vpn-card-icon">⚡</div>
+                                <div class="vpn-card-title">专线机场完全解析：为什么企业办公与高端用户都选专线？</div>
+                                <div class="vpn-card-text">深度拆解物理跨境专线架构、物理端到端传输、抗封锁原理与高端用户长效稳健选购法则。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1220 字</span>
+                                <a href="articles/kw-zhuanxian-jichang.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 6: IPLC/IEPL -->
+                        <div class="vpn-card-item" id="art-6">
+                            <div>
+                                <div class="badge-num-pill">NO. 6</div>
+                                <div class="vpn-card-icon">🔬</div>
+                                <div class="vpn-card-title">IPLC与IEPL专线对比：跨境专线的技术原理与性能分析</div>
+                                <div class="vpn-card-text">对比分析物理跨境专线二层与三层传输原理、组网灵活性与实际使用体验选型法则。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1210 字</span>
+                                <a href="articles/kw-iplc-iepl.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 7: Netflix机场 -->
+                        <div class="vpn-card-item" id="art-7">
+                            <div>
+                                <div class="badge-num-pill">NO. 7</div>
+                                <div class="vpn-card-icon">🍿</div>
+                                <div class="vpn-card-title">Netflix机场解锁指南：原生IP挑选与4K Ultra HD画质播放</div>
+                                <div class="vpn-card-text">如何稳定解锁 Netflix 网飞全区非自制剧？解析原生住宅 IP 检测与 DNS 智能解锁机制。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1200 字</span>
+                                <a href="articles/kw-netflix-jichang.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 8: TikTok加速器 -->
+                        <div class="vpn-card-item" id="art-8">
+                            <div>
+                                <div class="badge-num-pill">NO. 8</div>
+                                <div class="vpn-card-icon">🎵</div>
+                                <div class="vpn-card-title">TikTok加速器推荐：海外版抖音短视频运营与原生家宽IP节点</div>
+                                <div class="vpn-card-text">针对海外版 TikTok 的零播放与风控难题，提供拔卡避坑指南、静态住宅 IP 挑选与跨境运营方案。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1210 字</span>
+                                <a href="articles/kw-tiktok-jiasu.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 9: Disney+观看 -->
+                        <div class="vpn-card-item" id="art-9">
+                            <div>
+                                <div class="badge-num-pill">NO. 9</div>
+                                <div class="vpn-card-icon">✨</div>
+                                <div class="vpn-card-title">Disney+观看机场节点指南：星战与漫威宇宙超高清流媒体加速</div>
+                                <div class="vpn-card-text">解析 Disney+ 迪士尼流媒体解锁节点挑选、繁体中文字幕支持与 4K IMAX Enhanced 播放。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1190 字</span>
+                                <a href="articles/kw-disney-guankan.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 10: ChatGPT加速器 -->
+                        <div class="vpn-card-item" id="art-10">
+                            <div>
+                                <div class="badge-num-pill">NO. 10</div>
+                                <div class="badge-num-pill" style="display: inline-block; margin-left: 4px;">HOT</div>
+                                <div class="vpn-card-icon">🤖</div>
+                                <div class="vpn-card-title">ChatGPT加速器与节点挑选：告别 Access Denied 彻底解决验证码</div>
+                                <div class="vpn-card-text">解决 OpenAI / ChatGPT 访问被拒、Cloudflare 验证码频繁弹窗，提供长效稳定 AI 对话节点推荐。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1210 字</span>
+                                <a href="articles/kw-chatgpt-jiasu.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 11: Claude专用 -->
+                        <div class="vpn-card-item" id="art-11">
+                            <div>
+                                <div class="badge-num-pill">NO. 11</div>
+                                <div class="vpn-card-icon">🧠</div>
+                                <div class="vpn-card-title">Claude专用加速节点配置：解决 403 封号与地区限制排查</div>
+                                <div class="vpn-card-text">解析 Anthropic 旗下 Claude 3.5 专用的加速节点挑选法则，避开 403 Forbidden 封号机制。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1200 字</span>
+                                <a href="articles/kw-claude-zhuanyong.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 12: Github加速 -->
+                        <div class="vpn-card-item" id="art-12">
+                            <div>
+                                <div class="badge-num-pill">NO. 12</div>
+                                <div class="vpn-card-icon">🐙</div>
+                                <div class="vpn-card-title">GitHub加速完全指南：彻底解决 Git Clone 缓慢与 Connection Refused 报错</div>
+                                <div class="vpn-card-text">彻底解决程序员 git clone 缓慢、docker pull 失败问题，提供终端 HTTP 与 SSH 全套代理配置。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1210 字</span>
+                                <a href="articles/kw-github-jiasu.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+
+                        <!-- 13: 谷歌搜索 -->
+                        <div class="vpn-card-item" id="art-13">
+                            <div>
+                                <div class="badge-num-pill">NO. 13</div>
+                                <div class="vpn-card-icon">🔍</div>
+                                <div class="vpn-card-title">谷歌搜索与学术资源加速技巧：解决 DNS 污染与验证码弹窗</div>
+                                <div class="vpn-card-text">优化 Google Search 与谷歌学术 (Scholar) 访问，解决 DNS 污染与异常流量验证弹窗问题。</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">约 1190 字</span>
+                                <a href="articles/kw-guge-sousuo.html" class="btn-sm-primary">阅读全文 →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧文章目录组件 (TOC Sticky Sidebar Panel) -->
+                <aside class="right-toc-panel">
+                    <div class="toc-panel-head">
+                        <span>📑</span>
+                        <span>本页指南文章目录</span>
+                    </div>
+                    <nav class="toc-list">
+                        <a href="articles/kw-jichang-tuijian.html" class="toc-item-link" title="2026最新机场推荐指南">
+                            <span class="toc-item-num">01</span>
+                            <span class="toc-item-text">机场推荐指南</span>
+                        </a>
+                        <a href="articles/kw-vpn-tuijian.html" class="toc-item-link" title="2026年商业VPN推荐与机场代理对比">
+                            <span class="toc-item-num">02</span>
+                            <span class="toc-item-text">商业VPN与机场对比</span>
+                        </a>
+                        <a href="articles/kw-4k-bukadun.html" class="toc-item-link" title="4K不卡顿机场节点挑选法则">
+                            <span class="toc-item-num">03</span>
+                            <span class="toc-item-text">4K/8K不卡顿节点挑选</span>
+                        </a>
+                        <a href="articles/kw-youxi-jiasu.html" class="toc-item-link" title="电竞级游戏加速机场挑选">
+                            <span class="toc-item-num">04</span>
+                            <span class="toc-item-text">电竞游戏加速机场</span>
+                        </a>
+                        <a href="articles/kw-zhuanxian-jichang.html" class="toc-item-link" title="专线机场完全解析">
+                            <span class="toc-item-num">05</span>
+                            <span class="toc-item-text">专线机场完全解析</span>
+                        </a>
+                        <a href="articles/kw-iplc-iepl.html" class="toc-item-link" title="IPLC与IEPL专线对比">
+                            <span class="toc-item-num">06</span>
+                            <span class="toc-item-text">IPLC与IEPL专线对比</span>
+                        </a>
+                        <a href="articles/kw-netflix-jichang.html" class="toc-item-link" title="Netflix机场解锁指南">
+                            <span class="toc-item-num">07</span>
+                            <span class="toc-item-text">Netflix网飞解锁指南</span>
+                        </a>
+                        <a href="articles/kw-tiktok-jiasu.html" class="toc-item-link" title="TikTok加速器推荐">
+                            <span class="toc-item-num">08</span>
+                            <span class="toc-item-text">TikTok短视频运营加速</span>
+                        </a>
+                        <a href="articles/kw-disney-guankan.html" class="toc-item-link" title="Disney+观看机场节点指南">
+                            <span class="toc-item-num">09</span>
+                            <span class="toc-item-text">Disney+迪士尼解锁</span>
+                        </a>
+                        <a href="articles/kw-chatgpt-jiasu.html" class="toc-item-link" title="ChatGPT加速器与节点挑选">
+                            <span class="toc-item-num">10</span>
+                            <span class="toc-item-text">ChatGPT加速与防封号</span>
+                        </a>
+                        <a href="articles/kw-claude-zhuanyong.html" class="toc-item-link" title="Claude专用加速节点配置">
+                            <span class="toc-item-num">11</span>
+                            <span class="toc-item-text">Claude 3.5专用加速</span>
+                        </a>
+                        <a href="articles/kw-github-jiasu.html" class="toc-item-link" title="GitHub加速完全指南">
+                            <span class="toc-item-num">12</span>
+                            <span class="toc-item-text">GitHub加速与配置</span>
+                        </a>
+                        <a href="articles/kw-guge-sousuo.html" class="toc-item-link" title="谷歌搜索与学术资源加速技巧">
+                            <span class="toc-item-num">13</span>
+                            <span class="toc-item-text">谷歌搜索与学术加速</span>
+                        </a>
+                    </nav>
+                </aside>
+            </div>
+        </main>
+    </div>
+</div>
+
+<footer class="site-footer" style="text-align: center; padding: 24px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border-color);">
+    <p>© 2026 逼哥机场测评 · 独立数据驱动的科学上网指南</p>
+</footer>
+
+</body>
+</html>
+
+</body>
+</html>
+

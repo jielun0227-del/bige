@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP纯净度怎么看：ChatGPT报异常、Netflix不解锁的节点排查指南 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="节点能连上但ChatGPT提示异常、Netflix打不开？本文大白话详解IP纯净度、原生IP与广播IP区别、检测工具与避坑节点挑选法则。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.8;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .step-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .step-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">🏠</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../vpn-proxy.html" class="nav-item">
+                <span class="nav-item-icon">🌐</span>
+                <span>科学上网</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>文章阅读 · IP纯净度与节点风控排查</h2>
+            <a href="../vpn-proxy.html" class="btn-sm-ghost">返回科学上网专区</a>
+        </header>
+
+        <main class="content-body">
+            <div class="article-layout-container">
+                <article class="article-card-main">
+                    <h1>🏠 IP 纯净度怎么看：ChatGPT 报异常、Netflix 不解锁的节点问题排查（2026）</h1>
+                    <div class="article-meta">
+                        <span>发布日期：2026-09-16</span>
+                        <span>阅读时间：约 7 分钟 (1200 字)</span>
+                        <span>技术分类：IP 质量检测 / 风控规则 / 原生与广播 IP</span>
+                    </div>
+
+                    <p>许多人在使用科学上网时常遇到奇怪现象：节点网络延迟很低、速度也能跑满，但访问 ChatGPT 时却频繁弹出“Access Denied”或需要反复校验 Cloudflare 验证码；观看 Netflix 时无法加载自制剧甚至直接被识别为代理。很多人误以为是网络断连，但根源其实在于**节点 IP 的纯净度过差**。本文将大白话拆解 IP 纯净度与节点选择技巧。</p>
+
+                    <h2>一、什么是 IP 纯净度？</h2>
+                    <p>简单说，IP 纯净度就是**该 IP 在各大互联网平台安全风控数据库中的“声誉评分”**。当一个公网 IP 被成百上千的人同时共享、或者频繁被黑产自动化脚本用于爬虫和注册小号时，这个 IP 就会被标记为“高风险黑名单”。访问风控严格的服务（如 OpenAI、Claude、金融银行应用）时自然会被阻断。</p>
+
+                    <h2>二、原生 IP 与广播 IP 的本质区别</h2>
+                    <p>挑选节点时经常能看到“原生 IP”的标签，它与普通“广播 IP”有何不同？</p>
+                    <div class="step-box">
+                        <div class="step-title">1. 原生 IP (Native IP)</div>
+                        <p>指的是 IP 地址的注册地与机房所在的实际地理位置完全一致（例如：IP 属于日本运营商，且机房就在东京）。原生 IP 被各类流媒体与 AI 服务识别为合法本地用户的概率极高。</p>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-title">2. 广播 IP (Broadcast IP)</div>
+                        <p>指注册地在其它国家（如美国），但通过 BGP 路由广播到了其它地区（如香港机房）。广播 IP 极易引发 GeoIP 判定失效，导致无法播放当地版权视频。</p>
+                    </div>
+
+                    <h2>三、如何检测节点的 IP 质量？</h2>
+                    <p>用户可以通过在线工具如 <code>scamalytics.com</code> 查看 Fraud Score 欺诈危险分。若分数高于 30 分说明风险偏高，若低于 10 分则说明属于高度纯净的优质节点。</p>
+
+                    <h2>四、选选优质节点的实用建议</h2>
+                    <p>优先选择提供“静态住宅家宽 IP”或全专线防封锁的机场服务（如快狸、云图等），不仅能大幅降低弹出验证码的频率，还能确保 AI 平台交互的长效稳定。</p>
+                </article>
+
+                <aside class="toc-sidebar">
+                    <div class="toc-header-title">
+                        <span>📑</span>
+                        <span>文章目录</span>
+                    </div>
+                    <ul class="toc-nav-list" id="tocList"></ul>
+                </aside>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100Mbps 限速到底多快？带宽单位换算科普 - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="带宽单位 Mbps 与下载速度 MB/s 区别换算科普：100Mbps 限速真实下载速度计算、YouTube 4K 与 8K 视频带宽需求分析。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 36px; line-height: 1.85; }
+        .article-card-main h1 { font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 16px; color: var(--text-primary); }
+        .article-card-main h2 { font-family: var(--font-serif); font-size: 1.25rem; margin: 28px 0 14px; color: var(--accent-primary); border-bottom: 1px dashed var(--border-color); padding-bottom: 6px; }
+        .article-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); display: flex; gap: 16px; }
+        .calc-box { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; margin: 14px 0; }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>网站首页</span></a>
+            <a href="../rankings.html" class="nav-item"><span class="nav-item-icon">🏆</span><span>机场推荐榜</span></a>
+            <div class="nav-section-title">实用指南</div>
+            <a href="../tutorials.html" class="nav-item"><span class="nav-item-icon">📖</span><span>小白新手教程</span></a>
+            <a href="../wiki.html" class="nav-item active"><span class="nav-item-icon">🔬</span><span>科普百科全书</span></a>
+            <div class="nav-section-title">关于本站</div>
+            <a href="../about.html" class="nav-item"><span class="nav-item-icon">ℹ️</span><span>关于我们</span></a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科 · 带宽单位换算科普</h2>
+            <a href="../wiki.html" class="btn-sm-ghost">返回百科首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>📊 100Mbps 限速到底有多快？带宽单位 Mbps 与 MB/s 换算科普</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 6 分钟 (1060 字)</span>
+                    <span>所属分类：客户端与实战技巧</span>
+                </div>
+
+                <p>在购买机场套餐时，我们经常看到“节点限速 100Mbps”或“千兆峰值带宽”等宣传。许多新手会产生疑惑：100Mbps 到底能达到每秒多少兆的实际下载速度？够不够看 4K 视频？本文为您算清这笔账。</p>
+
+                <h2>一、小 b 与大 B 的数学换算法则</h2>
+                <p>宽带运营商与机场标注的带宽单位通常是 <b>Mbps (Megabits per second)</b>，而我们在浏览器或下载器中看到的下载速度单位是 <b>MB/s (Megabytes per second)</b>。</p>
+                <div class="calc-box">
+                    <strong style="color: var(--accent-primary);">📐 换算公式</strong><br>
+                    <code>1 Byte (字节) = 8 bits (比特)</code><br>
+                    所以：<code>实际下载速度 (MB/s) = 签约带宽 (Mbps) ÷ 8</code>
+                </div>
+
+                <h2>二、常见限速带宽的真实下载速率表</h2>
+                <ul>
+                    <li><strong>100Mbps 限速</strong>：理论最高下载速度为 <b>12.5 MB/s</b>（扣除网络损耗约 11-12 MB/s）。下载一个 1GB 的文件仅需约 1.5 分钟。</li>
+                    <li><strong>300Mbps 限速</strong>：理论最高下载速度为 <b>37.5 MB/s</b>。</li>
+                    <li><strong>1000Mbps (千兆) 峰值</strong>：理论最高下载速度可达 <b>125 MB/s</b>。</li>
+                </ul>
+
+                <h2>三、看 YouTube / Netflix 需要多少带宽？</h2>
+                <ul>
+                    <li><strong>1080P 高清视频</strong>：仅需 <b>5 - 10 Mbps</b>。</li>
+                    <li><strong>4K 极清视频</strong>：推荐 <b>25 - 35 Mbps</b> 带宽。</li>
+                    <li><strong>8K 60帧 极清视频</strong>：推荐 <b>80 - 100 Mbps</b> 稳定带宽。</li>
+                </ul>
+                <p>由此可见，即使是 100Mbps 限速的节点，也完全足以轻松秒开 4K 乃至 8K 视频。选机场切勿一味追求上千兆的虚标带宽，稳定不丢包才是关键。</p>
+
+                <div style="margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                    <a href="../wiki.html" class="btn-sm-primary">← 返回科普百科目录</a>
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

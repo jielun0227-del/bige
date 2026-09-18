@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Clash Verge Rev 详细配置指南 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.8;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+        }
+        .step-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .step-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+        .cta-inner-box {
+            background: rgba(197, 160, 89, 0.06);
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            margin: 28px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">👈</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../tutorials.html" class="nav-item active">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="../wiki.html" class="nav-item">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>Windows · Clash Verge Rev 详细配置指南</h2>
+            <a href="../tutorials.html" class="btn-sm-ghost">返回教程列表</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>🪟 Windows 平台 Clash Verge Rev 从零开始安装与订阅导入指南</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 6 分钟 (1050 字)</span>
+                    <span>适用系统：Windows 10 / 11 (64-bit)</span>
+                </div>
+
+                <p>在当前 Windows 平台上，Clash Verge Rev 已成为取代老旧客户端的最主流科学上网代理软件。它基于 Tauri 框架打造，内存占用更低、支持最新的 Mihomo (Clash Meta) 内核，完美支持 VLESS、Hysteria2 以及各种复杂的规则分流配置。</p>
+
+                <h2>一、软件下载与安装准备</h2>
+                <p>建议始终从官方开源 GitHub Release 页面下载最新安装文件，避免使用经过篡改的第三方打包软件：</p>
+                <div class="step-box">
+                    <div class="step-title">1. 安装包选择提示</div>
+                    <p>一般用户请选择 <code>Clash.Verge_x64-setup.exe</code> 安装程序；若系统提示缺少 Webview2 运行时，请跟随微软官方指引补全系统组件。</p>
+                </div>
+
+                <h2>二、导入机场订阅链接</h2>
+                <p>完成安装并启动 Clash Verge Rev 后，请遵循以下四个简单步骤完成订阅添加：</p>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 1：复制机场订阅链接</div>
+                    <p>登录您所使用的优质加速机场后台（如云图机场或极速Cloud），找到 Clash 专属订阅复制按钮。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 2：添加配置并刷新</div>
+                    <p>在 Clash Verge 左侧导航进入<b>「订阅 (Profiles)」</b>页面，将复制的 URL 粘贴至上方地址框中，点击右侧的<b>「导入 (Import)」</b>按钮。导入成功后，卡片将显示节点总数与更新时间。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 3：选择代理模式与节点</div>
+                    <p>点击左侧<b>「代理 (Proxies)」</b>菜单。建议新手用户保持<b>「规则 (Rule)」</b>分流模式，在此模式下，国内网站自动直连，国外受限网站自动通过代理中转。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 4：开启系统代理与开机自启</div>
+                    <p>回到<b>「设置 (Settings)」</b>页面，打开<b>「系统代理 (System Proxy)」</b>开关。若需要开机自动后台运行，可同步勾选<b>「开机自启 (Auto Launch)」</b>。</p>
+                </div>
+
+                <div class="cta-inner-box">
+                    <h3 style="color: var(--accent-primary); font-size: 1.1rem; margin-bottom: 8px;">还没有稳定好用的加速节点？</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;">推荐选择经过晚高峰连通率实测的高质量主力机场，月付低至 ¥6 起。</p>
+                    <a href="../index.html#rankings" class="btn-sm-primary" style="display: inline-block;">查看 2026 高质量机场推荐榜 →</a>
+                </div>
+
+                <h2>三、常见故障排查 (Troubleshooting)</h2>
+                <ul>
+                    <li><strong>开启系统代理后无法上网？</strong>：请检查防火墙是否阻挡了 Clash 进程，或在设置中重置 TAP/TUN 虚拟网卡。</li>
+                    <li><strong>节点延迟全显示 Timeout？</strong>：确认系统时间是否与标准北京时间同步，相差超过 30 秒将导致 TLS 握手失败。</li>
+                </ul>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

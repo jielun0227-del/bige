@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux科学上网教程：mihomo命令行翻墙与机场订阅导入 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="Linux怎么科学上网？2026年正确姿势是mihomo命令行客户端：机场订阅导入、systemd开机自启、终端/Git/Docker代理全流程。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.8;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .step-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .step-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+        .code-block-custom {
+            background: #100e0c;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: #d4af37;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">🏠</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../vpn-proxy.html" class="nav-item">
+                <span class="nav-item-icon">🌐</span>
+                <span>科学上网</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>文章阅读 · Linux科学上网教程</h2>
+            <a href="../vpn-proxy.html" class="btn-sm-ghost">返回科学上网专区</a>
+        </header>
+
+        <main class="content-body">
+            <div class="article-layout-container">
+                <article class="article-card-main">
+                    <h1>🐧 Linux科学上网教程：mihomo命令行翻墙与机场订阅导入（2026）</h1>
+                    <div class="article-meta">
+                        <span>发布日期：2026-09-16</span>
+                        <span>阅读时间：约 7 分钟 (1180 字)</span>
+                        <span>适用环境：Linux VPS / Ubuntu / Debian / WSL / 无桌面环境</span>
+                    </div>
+
+                    <p>在 Linux 服务器或 WSL 环境中，敲下 <code>git clone</code> 进度条纹丝不动，<code>docker pull</code> 频繁连接超时，或者使用 <code>pip install</code> 遭遇报错 Refused 是许多开发者常遇到的痛点。Linux 没有图形界面，而经典的原版 Clash（Dreamacro/clash）在 2023 年 11 月已被作者删库停更。2026 年在 Linux 上科学上网的**正确姿势就是采用 mihomo 命令行内核结合机场订阅**。</p>
+
+                    <h2>一、避坑澄清：为什么要选择 mihomo？</h2>
+                    <p>原版 Clash 官方仓库停更后，所有基于旧版安装包的教程链接均已失效。**mihomo**（即原 Clash Meta 内核）是正统继承者，不仅完美兼容旧版的规则与 YAML 配置文件，还增加了对 Hysteria 2、VLESS 等下一代现代化代理协议的深度支持，是目前 Linux 无桌面环境下的绝佳首选。</p>
+
+                    <h2>二、mihomo 命令行极速部署流程</h2>
+                    <div class="step-box">
+                        <div class="step-title">1. 查看系统架构并下载二进制文件</div>
+                        <p>首先通过终端查询架构并前往 mihomo 官方 Releases 仓库下载最新稳定版：</p>
+                        <div class="code-block-custom">uname -m<br># x86_64 对应 amd64，aarch64 对应 arm64</div>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-title">2. 解压配置与导入机场订阅</div>
+                        <p>将解压后的二进制文件赋予执行权限并移至 <code>/usr/local/bin/mihomo</code>。接着将从机场后台复制的 Clash 订阅链接下载为本地 <code>config.yaml</code> 配置文件：</p>
+                        <div class="code-block-custom">curl -o ~/.config/mihomo/config.yaml "你的机场Clash订阅链接"</div>
+                    </div>
+
+                    <h2>三、配置 Systemd 服务实现开机自启</h2>
+                    <p>为了保障服务器重启后代理不中断，可以通过配置 Systemd 将 mihomo 托管为系统守护进程：</p>
+                    <div class="code-block-custom">
+[Unit]<br>
+Description=mihomo Daemon, A rule-based proxy in Go.<br>
+After=network.target<br><br>
+[Service]<br>
+Type=simple<br>
+ExecStart=/usr/local/bin/mihomo -d /etc/mihomo<br>
+Restart=always<br><br>
+[Install]<br>
+WantedBy=multi-user.target
+                    </div>
+
+                    <h2>四、终端、Git 与 Docker 环境变量挂载</h2>
+                    <p>启动服务后，默认代理端口通常为 <code>7890</code>。可以通过设置环境变量一键让终端命令走代理加速：</p>
+                    <div class="code-block-custom">
+export http_proxy=http://127.0.0.1:7890<br>
+export https_proxy=http://127.0.0.1:7890
+                    </div>
+
+                    <h2>五、总结与建议</h2>
+                    <p>通过 mihomo + 订阅的方式，仅需数分钟即可为无桌面 Linux 服务器打通高速出海通道，彻底解决依赖下载慢、Docker 镜像拉取超时等难题。</p>
+                </article>
+
+                <!-- 右侧固定文章目录 TOC -->
+                <aside class="toc-sidebar">
+                    <div class="toc-header-title">
+                        <span>📑</span>
+                        <span>文章目录</span>
+                    </div>
+                    <ul class="toc-nav-list" id="tocList"></ul>
+                </aside>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
+

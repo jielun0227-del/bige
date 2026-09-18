@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>机场测速完全指南与延迟丢包测试 - </title>
+    <meta name="description" content="2026年最新机场节点测速指南：Stash/Clash 测速工具、晚高峰 Ping 延迟、UDP 丢包率与真实下载带宽测试方法。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 36px; line-height: 1.85; }
+        .article-card-main h1 { font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 16px; color: var(--text-primary); }
+        .article-card-main h2 { font-family: var(--font-serif); font-size: 1.25rem; margin: 28px 0 14px; color: var(--accent-primary); border-bottom: 1px dashed var(--border-color); padding-bottom: 6px; }
+        .article-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); display: flex; gap: 16px; }
+        .step-box { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; margin: 14px 0; }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt=" Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1></h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>网站首页</span></a>
+            <a href="../rankings.html" class="nav-item"><span class="nav-item-icon">🏆</span><span>机场推荐榜</span></a>
+            <div class="nav-section-title">实用指南</div>
+            <a href="../tutorials.html" class="nav-item"><span class="nav-item-icon">📖</span><span>小白新手教程</span></a>
+            <a href="../wiki.html" class="nav-item active"><span class="nav-item-icon">🔬</span><span>科普百科全书</span></a>
+            <div class="nav-section-title">关于本站</div>
+            <a href="../about.html" class="nav-item"><span class="nav-item-icon">ℹ️</span><span>关于我们</span></a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科 · 机场测速与延迟丢包测试完全指南</h2>
+            <a href="../wiki.html" class="btn-sm-ghost">返回百科首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>⚡ 机场测速完全指南：如何正确测试节点真实延迟与晚高峰丢包？</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 6 分钟 (1140 字)</span>
+                    <span>所属分类：客户端与实战技巧</span>
+                </div>
+
+                <p>许多用户测速时只看软件里显示的真连接延迟（Ping），却发现在实际观看视频时频繁缓冲。这是因为单凭 Ping 无法反映节点的丢包率与持续带宽吞吐能力。本文为您拆解专业的节点测速全流程。</p>
+
+                <h2>一、三大核心测试指标</h2>
+                <ul>
+                    <li><strong>TCP/HTTP 响应延迟 (Ping)</strong>：反映节点握手响应速度，越低越好（香港 20ms、日本 40ms 算优秀）。</li>
+                    <li><strong>UDP / 数据丢包率 (Packet Loss)</strong>：决定连接稳定性。丢包率高于 5% 会导致网页频繁重加载、视频严重卡顿。</li>
+                    <li><strong>晚高峰峰值吞吐带宽 (Bandwidth)</strong>：特指晚上 20:00 - 23:00 网络拥堵期的实际下载速率。</li>
+                </ul>
+
+                <h2>二、推荐的专业测速工具</h2>
+                <div class="step-box">
+                    <strong>1. Clash / Mihomo 内核内置测速</strong><br>
+                    在 Clash Verge 或 Stash 中点击“延迟测试”按钮，选择 RTT 或 HTTP 延迟模式，能快速摸排失效节点。
+                </div>
+
+                <div class="step-box">
+                    <strong>2. Stairspeedtest / Stair Speedtest CLI 自动化脚本</strong><br>
+                    专业的第三方开源测速工具，可一键批量导出节点测速图表（包含画画图、速度阶梯与延迟分布）。
+                </div>
+
+                <div class="step-box">
+                    <strong>3. YouTube 详细统计信息 (Stats for nerds)</strong><br>
+                    最直观的真机压测！播放一段 4K 60帧视频，右键选择“详细统计信息”，观察 <code>Connection Speed</code> 是否稳定在 100,000 Kbps 以上。
+                </div>
+
+                <div style="margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                    <a href="../wiki.html" class="btn-sm-primary">← 返回科普百科目录</a>
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

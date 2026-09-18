@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 逼哥机场测评 Node & Proxy Lab</title>
+    <meta name="description" content="逼哥机场测评：专注全网代理机场测评与晚高峰稳定性测试。了解我们的评测原则、技术设备与独立实验室定位。">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-card-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+        .about-card-box h1 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        .about-card-box h2 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            margin: 28px 0 14px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .about-intro-p {
+            font-size: 0.96rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .about-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+        .about-feature-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px;
+        }
+        .about-feature-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .about-feature-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <!-- ══ 左侧侧边栏 ══ -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/bigejichang_logo.png" alt="逼哥机场测评 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>逼哥机场测评</h1>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="index.html" class="nav-item">
+                <span class="nav-item-icon">🏠</span>
+                <span>网站首页</span>
+            </a>
+            <a href="rankings.html" class="nav-item">
+                <span class="nav-item-icon">🏆</span>
+                <span>机场推荐榜</span>
+            </a>
+            <a href="rankings.html#reviews" class="nav-item">
+                <span class="nav-item-icon">📝</span>
+                <span>机场测评文章</span>
+            </a>
+            
+            <div class="nav-section-title">实用指南</div>
+            <a href="tutorials.html" class="nav-item">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="wiki.html" class="nav-item">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+            <a href="vpn-proxy.html" class="nav-item">
+                <span class="nav-item-icon">🌐</span>
+                <span>科学上网</span>
+            </a>
+
+            <div class="nav-section-title">关于本站</div>
+            <a href="about.html" class="nav-item active">
+                <span class="nav-item-icon">ℹ️</span>
+                <span>关于我们</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2026 逼哥机场测评 Lab</p>
+            <p style="margin-top: 4px; font-size: 0.72rem; color: var(--text-muted);">独立数据驱动 · 不接受付费伪造</p>
+        </div>
+    </aside>
+
+    <!-- ══ 右侧主内容区 ══ -->
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>ℹ️ 关于我们 · 独立数据驱动的网络评测实验室</h2>
+            <a href="index.html" class="btn-sm-ghost">返回首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="about-card-box">
+                <h1>✨ 认识逼哥机场测评</h1>
+                <p class="about-intro-p">
+                    逼哥机场测评建立于 2026 年，是一个专注于全网代理机场实测、IEPL/IPLC 跨境专线监测与网络科普的独立实验室。我们由一群热衷于网络协议、流媒体解锁测试与 AI 编程提效的工程师与网络爱好者共同维护。
+                </p>
+
+                <h2>一、我们的三大评测原则</h2>
+                <div class="about-feature-grid">
+                    <div class="about-feature-card">
+                        <div class="about-feature-title">
+                            <span>🛡️ 拒绝付费伪造</span>
+                        </div>
+                        <div class="about-feature-desc">
+                            本站所有测评榜单与节点稳定性评分，均基于真实网络环境下的 7x24 小时并发监控，绝不接受机场主付费干预排名。
+                        </div>
+                    </div>
+
+                    <div class="about-feature-card">
+                        <div class="about-feature-title">
+                            <span>🌙 晚高峰压测</span>
+                        </div>
+                        <div class="about-feature-desc">
+                            速度测试必须发生在每日 20:00 - 23:00 国际出口最拥堵的时段，真实反映节点在网络高峰期的抗封锁与抗压能力。
+                        </div>
+                    </div>
+
+                    <div class="about-feature-card">
+                        <div class="about-feature-title">
+                            <span>💡 用户防坑优先</span>
+                        </div>
+                        <div class="about-feature-desc">
+                            恪守“按月订阅”防跑路法则，及时预警风险机场，为小白用户提供简单、透明的避坑指导。
+                        </div>
+                    </div>
+                </div>
+
+                <h2>二、实验室测试环境与设备</h2>
+                <p class="about-intro-p">
+                    我们自建了跨越电信、联通、移动三网千兆宽带的自动测速集群，配合 Python / Go 跑路预警脚本，对主流机场的 500+ 个节点进行包含 TCP Ping、UDP 丢包率、YouTube 8K 缓存带宽、ChatGPT API 响应延时以及 Netflix 区域解锁能力的全自动扫描。
+                </p>
+
+                <h2>三、联系与商务合作</h2>
+                <p class="about-intro-p">
+                    如果您有优质的机场推荐、节点测试数据反馈，或有商务合作意向（机场评测、Banner广告位展示等），欢迎通过以下官方联系方式与我们取得联系：
+                </p>
+                
+                <div class="about-feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 16px;">
+                    <div class="about-feature-card" style="border-left: 3px solid var(--accent-primary);">
+                        <div class="about-feature-title">
+                            <span>📧 商务合作邮箱</span>
+                        </div>
+                        <div class="about-feature-desc" style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; margin-top: 6px;">
+                            <a href="mailto:jielun0227@gmail.com" style="color: var(--accent-primary); text-decoration: none;">jielun0227@gmail.com</a>
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">欢迎机场官方合作、广告投递与反馈</div>
+                    </div>
+
+                    <div class="about-feature-card" style="border-left: 3px solid #2AABEE;">
+                        <div class="about-feature-title">
+                            <span>💬 Telegram 官方交流</span>
+                        </div>
+                        <div class="about-feature-desc" style="margin-top: 8px;">
+                            <a href="https://t.me/" target="_blank" class="btn-sm-primary" style="display: inline-block; border-radius: var(--radius-full); padding: 6px 16px; font-size: 0.85rem;">加入官方 Telegram 交流群 →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 页脚 -->
+            <footer class="site-footer">
+                <p>© 2026 逼哥机场测评 (逼哥机场 Lab) · 专注高品质加速测评</p>
+                <p style="margin-top: 6px;">本站所有测评均基于真实网络环境测试，不保证第三方服务永久可用性。</p>
+            </footer>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

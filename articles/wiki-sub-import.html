@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>机场订阅链接导入完整步骤 (2026) - </title>
+    <meta name="description" content="2026年最新全平台 Clash、Shadowrocket、NekoBox 订阅链接导入步骤详解与更新故障排查。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 36px; line-height: 1.85; }
+        .article-card-main h1 { font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 16px; color: var(--text-primary); }
+        .article-card-main h2 { font-family: var(--font-serif); font-size: 1.25rem; margin: 28px 0 14px; color: var(--accent-primary); border-bottom: 1px dashed var(--border-color); padding-bottom: 6px; }
+        .article-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); display: flex; gap: 16px; }
+        .step-card { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; margin: 14px 0; }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt=" Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1></h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>网站首页</span></a>
+            <a href="../rankings.html" class="nav-item"><span class="nav-item-icon">🏆</span><span>机场推荐榜</span></a>
+            <div class="nav-section-title">实用指南</div>
+            <a href="../tutorials.html" class="nav-item"><span class="nav-item-icon">📖</span><span>小白新手教程</span></a>
+            <a href="../wiki.html" class="nav-item active"><span class="nav-item-icon">🔬</span><span>科普百科全书</span></a>
+            <div class="nav-section-title">关于本站</div>
+            <a href="../about.html" class="nav-item"><span class="nav-item-icon">ℹ️</span><span>关于我们</span></a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科 · 订阅链接导入完整步骤</h2>
+            <a href="../wiki.html" class="btn-sm-ghost">返回百科首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>📱 机场订阅链接导入完整步骤与更新故障排查</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 6 分钟 (1080 字)</span>
+                    <span>所属分类：客户端与实战技巧</span>
+                </div>
+
+                <p>买好机场套餐后，如何将节点正确引入到客户端软件中是小白迈出的第一步。订阅链接本质上是一个远程配置下载 URL，它能自动将机场运维更新的节点列表实时同步到您的手机或电脑中。</p>
+
+                <h2>一、标准导入 4 步法</h2>
+                <div class="step-card">
+                    <strong>1. 复制机场专属 URL</strong>：登录机场后台，点击“复制 Clash 订阅”或“通用 V2Ray 订阅”。
+                </div>
+                <div class="step-card">
+                    <strong>2. 打开客户端添加配置</strong>：在 Clash Verge、Shadowrocket 或 NekoBox 的「订阅/配置」菜单中找到添加按钮。
+                </div>
+                <div class="step-card">
+                    <strong>3. 粘贴 URL 并点击下载</strong>：将复制的链接粘贴入文本框，点击导入，等待节点列表拉取完成。
+                </div>
+                <div class="step-card">
+                    <strong>4. 选中节点并开启代理</strong>：在代理列表中选择低延迟节点，勾选开启系统代理或 VPN 权限。
+                </div>
+
+                <h2>二、订阅更新失败常见原因</h2>
+                <ul>
+                    <li><strong>URL 缺少 https 前缀</strong>：复制时未完整选中，导致客户端无法识别。</li>
+                    <li><strong>系统时间不同步</strong>：电脑或手机系统时间相差超过 30 秒，导致 TLS 证书握手失败。</li>
+                    <li><strong>官网域名遭污染</strong>：机场主域名无法访问，需切换至机场备用域名。</li>
+                </ul>
+
+                <div style="margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                    <a href="../wiki.html" class="btn-sm-primary">← 返回科普百科目录</a>
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

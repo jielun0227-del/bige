@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家宽原生 IP 和机房 IP 有什么区别？ - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="2026年最新住宅家宽原生 IP (Residential IP) 与数据中心机房 IP (Datacenter IP) 深度对比：流媒体解锁、AI 风险值风控与风控避坑。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 36px; line-height: 1.85; }
+        .article-card-main h1 { font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 16px; color: var(--text-primary); }
+        .article-card-main h2 { font-family: var(--font-serif); font-size: 1.25rem; margin: 28px 0 14px; color: var(--accent-primary); border-bottom: 1px dashed var(--border-color); padding-bottom: 6px; }
+        .article-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); display: flex; gap: 16px; }
+        .type-card { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; margin: 14px 0; }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>网站首页</span></a>
+            <a href="../rankings.html" class="nav-item"><span class="nav-item-icon">🏆</span><span>机场推荐榜</span></a>
+            <div class="nav-section-title">实用指南</div>
+            <a href="../tutorials.html" class="nav-item"><span class="nav-item-icon">📖</span><span>小白新手教程</span></a>
+            <a href="../wiki.html" class="nav-item active"><span class="nav-item-icon">🔬</span><span>科普百科全书</span></a>
+            <div class="nav-section-title">关于本站</div>
+            <a href="../about.html" class="nav-item"><span class="nav-item-icon">ℹ️</span><span>关于我们</span></a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科 · 家宽原生 IP 与机房 IP 区别</h2>
+            <a href="../wiki.html" class="btn-sm-ghost">返回百科首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>🏠 家宽原生 IP 和机房 IP 有什么区别？为什么流媒体解锁需要原生 IP？</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 6 分钟 (1070 字)</span>
+                    <span>所属分类：客户端与实战技巧</span>
+                </div>
+
+                <p>在使用机场访问 Netflix、Disney+ 或 ChatGPT 时，我们经常会看到“广播 IP”与“家宽原生 IP”的标注。IP 的属性直接决定了您能否成功播放非自制剧或通过风控检测。本文为您详细拆解。</p>
+
+                <h2>一、什么是机房 IP (Datacenter IP)？</h2>
+                <p>机房 IP 指的是由阿里云、AWS、谷歌云、甲骨文等数据中心机房分配给服务器的 IP 地址段。</p>
+                <div class="type-card">
+                    <strong>特点</strong>：带宽大、成本极低，但 ASN 机构性质明确标明为“机房/数据中心”。因此极易被 Netflix、OpenAI、PayPal 等风控数据库直接封锁拦截。
+                </div>
+
+                <h2>二、什么是家宽原生 IP (Residential Native IP)？</h2>
+                <p>家宽原生 IP（住宅 IP）指的是由海外当地电信运营商（如日本 NTT、美国 AT&T、香港 HKT）直接分配给当地普通家庭宽带用户的 IP 地址。</p>
+                <div class="type-card">
+                    <strong>特点</strong>：在国际 IP 数据库（如 IP2Location、MaxMind）中性质判定为“ISP 住宅”。访问风控极严格的网站时，会被系统认定为普通真实居民，从而获得 100% 满血解锁体验。
+                </div>
+
+                <h2>三、如何检测节点的 IP 属性？</h2>
+                <p>推荐使用开源项目 <b>ipcheck</b> 或访问 <code>ip.sb</code> / <code>scamalytics.com</code> 网站。如果发现 Risk Score (风险值) 低于 10分，且 ISP 类型为 Residential，则说明该节点具备顶级解锁属性。</p>
+
+                <div style="margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                    <a href="../wiki.html" class="btn-sm-primary">← 返回科普百科目录</a>
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

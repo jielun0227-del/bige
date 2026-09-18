@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 种主流代理协议对比详解 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="2026年最新 Shadowsocks、VMess、VLESS、Trojan、Hysteria2、TUIC v5、REALITY 与 WireGuard 代理协议深度对比与选型指南。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.85;
+        }
+        .article-card-main h1 { font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 16px; color: var(--text-primary); }
+        .article-card-main h2 { font-family: var(--font-serif); font-size: 1.25rem; margin: 28px 0 14px; color: var(--accent-primary); border-bottom: 1px dashed var(--border-color); padding-bottom: 6px; }
+        .article-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); display: flex; gap: 16px; }
+        .proto-box { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px 18px; margin: 12px 0; }
+        .proto-title { font-weight: 700; color: var(--accent-primary); font-size: 1.05rem; }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">🏠</span>
+                <span>网站首页</span>
+            </a>
+            <a href="../rankings.html" class="nav-item">
+                <span class="nav-item-icon">🏆</span>
+                <span>机场推荐榜</span>
+            </a>
+            <div class="nav-section-title">实用指南</div>
+            <a href="../tutorials.html" class="nav-item">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="../wiki.html" class="nav-item active">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+            <div class="nav-section-title">关于本站</div>
+            <a href="../about.html" class="nav-item">
+                <span class="nav-item-icon">ℹ️</span>
+                <span>关于我们</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科 · 8 种主流代理协议对比详解</h2>
+            <a href="../wiki.html" class="btn-sm-ghost">返回百科首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>🔐 8 种主流代理协议全面对比详解 (2026 最新版)</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 7 分钟 (1180 字)</span>
+                    <span>所属分类：新手入门必读</span>
+                </div>
+
+                <p>在配置科学上网客户端时，您常常会看到 SS、VMess、VLESS、Trojan、Hysteria2 等协议名称。不同的协议在加密算法、传输开销、抗封锁能力及弱网爆发力上各有千秋。本文为您详细盘点 8 种主流协议的优缺点。</p>
+
+                <h2>一、传统加密协议</h2>
+                <div class="proto-box">
+                    <div class="proto-title">1. Shadowsocks (SS)</div>
+                    <p>最早流行的代理协议，基于对称加密。特点是轻量高效、CPU 占用极低，但在没有中转专线保护的公网环境下容易被流量特征识别。</p>
+                </div>
+
+                <div class="proto-box">
+                    <div class="proto-title">2. VMess (V2Ray)</div>
+                    <p>V2Ray 核心协议，支持复杂的加密传输与伪装。虽然功能强大，但头部握手开销较大，近几年逐渐被无状态的 VLESS 取代。</p>
+                </div>
+
+                <h2>二、TLS 伪装与现代无状态协议</h2>
+                <div class="proto-box">
+                    <div class="proto-title">3. VLESS</div>
+                    <p>新一代无状态轻量协议，移除了 VMess 冗余的加密校验，依赖底层的 TLS 证书提供安全保障，性能与速度大幅提升。</p>
+                </div>
+
+                <div class="proto-box">
+                    <div class="proto-title">4. Trojan</div>
+                    <p>模仿标准 HTTPS 网站流量的协议。对于检视防火墙而言，Trojan 流量与正常的 HTTPS 网页访问完全一致，隐蔽性极高。</p>
+                </div>
+
+                <div class="proto-box">
+                    <div class="proto-title">5. REALITY (VLESS-REALITY)</div>
+                    <p>最新的无证书伪装技术！无需自备域名和申请证书，直接借用（偷取）其他合规大厂（如 Apple、Microsoft）的 TLS 指纹，抗主动探测能力绝佳。</p>
+                </div>
+
+                <h2>三、基于 UDP 的拥塞控制与爆速协议</h2>
+                <div class="proto-box">
+                    <div class="proto-title">6. Hysteria2 (歇斯底里)</div>
+                    <p>基于 QUIC (UDP) 协议重写的暴力发包协议。针对丢包率高、网络拥堵的环境进行了深度优化，即使在弱网下也能拉满带宽。</p>
+                </div>
+
+                <div class="proto-box">
+                    <div class="proto-title">7. TUIC v5</div>
+                    <p>同样基于 QUIC 协议的高并发传输协议，特别适合移动端（4G/5G 网络）频繁切换基站时保持长连接不断连。</p>
+                </div>
+
+                <div class="proto-box">
+                    <div class="proto-title">8. WireGuard</div>
+                    <p>现代 VPN 协议，运行在内核层。性能极其强劲，但流量特征明显，通常配合 Cloudflare WARP 或中转线路使用。</p>
+                </div>
+
+                <div style="margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                    <a href="../wiki.html" class="btn-sm-primary">← 返回科普百科目录</a>
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

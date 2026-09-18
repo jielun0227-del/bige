@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逼哥机场测评 - 2026年稳定网络加速与机场推荐日志</title>
+    <meta name="description" content="逼哥机场测评：专注全网代理机场测评与晚高峰稳定性测试。涵盖IEPL/IPLC专线排名、中转加速、Clash/Sing-box客户端配置指南与防跑路避坑建议。">
+    <meta name="keywords" content="机场推荐, 科学上网, 网络加速, IEPL专线, Clash配置, 翻墙教程, 2026机场排名">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+    <!-- ══ 左侧侧边栏 (Fixed Sidebar Left Column) ══ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="images/bigejichang_logo.png" alt="逼哥机场测评 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>逼哥机场测评</h1>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="index.html" class="nav-item active">
+                <span class="nav-item-icon">🏠</span>
+                <span>网站首页</span>
+            </a>
+            <a href="rankings.html" class="nav-item">
+                <span class="nav-item-icon">🏆</span>
+                <span>机场推荐榜</span>
+            </a>
+            <a href="rankings.html#reviews" class="nav-item">
+                <span class="nav-item-icon">📝</span>
+                <span>机场测评文章</span>
+            </a>
+
+            
+            <div class="nav-section-title">实用指南</div>
+            <a href="tutorials.html" class="nav-item">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="wiki.html" class="nav-item">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+            <a href="vpn-proxy.html" class="nav-item">
+                <span class="nav-item-icon">🌐</span>
+                <span>科学上网</span>
+            </a>
+
+            <div class="nav-section-title">关于本站</div>
+            <a href="about.html" class="nav-item">
+                <span class="nav-item-icon">ℹ️</span>
+                <span>关于我们</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2026  Lab</p>
+            <p style="margin-top: 4px; font-size: 0.72rem; color: var(--text-muted);">独立数据驱动 · 不接受付费伪造</p>
+        </div>
+    </aside>
+
+    <!-- ══ 右侧主内容区 (Main Content Right Column) ══ -->
+    <div class="main-wrapper">
+        <!-- 顶部 Quick Bar -->
+        <header class="top-bar">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+                <div class="top-search-wrap">
+                    <span class="search-icon-fixed">🔍</span>
+                    <input type="text" class="top-search-input" id="searchInput" placeholder="搜索机场、文章或教程...">
+                </div>
+            </div>
+
+            <div class="top-quick-actions">
+                <div class="badge-tag">
+                    <span class="status-dot-pulse"></span>
+                    <span>实测数据更新：2026-09-16</span>
+                </div>
+                <a href="https://t.me/" target="_blank" class="btn-sm-primary" style="border-radius: var(--radius-full);">💬 官方TG频道</a>
+            </div>
+        </header>
+
+        <!-- 内容主体 -->
+        <main class="content-body">
+            <!-- ══ 1:1 高保真同色系硬核科技 Hero 板块 (带专属同色系 3D 节点插画) ══ -->
+            <section class="hero-center-box">
+                <!-- 同色系 3D 科技网络节点插画 -->
+                <img src="images/hero_network_illustration.png" alt="Cyber Network Relay Node" class="hero-illustration-img">
+
+                <!-- 顶部 Live 状态胶囊微标 -->
+                <div class="hero-pill-badge" style="width: fit-content;">
+                    <span class="dot-green-pulse"></span>
+                    <span>实时更新 · 最后测试：2026年9月16日</span>
+                </div>
+
+                <!-- 巨幅主标题 -->
+                <h1 class="hero-main-heading">
+                    找到你的 <span class="gradient-text-purple">最强机场</span><br>
+                    真实数据说话
+                </h1>
+
+                <!-- 副标题与说明文案 -->
+                <p class="hero-sub-text" style="margin-left: 0;">
+                    晚高峰亲测 · 流媒体解锁验证 · IEPL/IPLC 专线评估<br>
+                    <span class="highlight-white">不接受付费植入，只推荐真正用过的优质机场</span>
+                </p>
+
+                <!-- 统计数据图标栏 -->
+                <div class="hero-stats-flex" style="justify-content: flex-start;">
+                    <div class="hero-stat-item">
+                        <span>📊</span>
+                        <span>已测评 <strong>32</strong> 家机场</span>
+                    </div>
+                    <div class="hero-stat-item">
+                        <span>⚠️</span>
+                        <span>已预警 <strong>8</strong> 家跑路</span>
+                    </div>
+                    <div class="hero-stat-item">
+                        <span>👥</span>
+                        <span><strong>12,000+</strong> 用户信赖</span>
+                    </div>
+                </div>
+
+                <!-- 按钮组 (CTA) -->
+                <div class="hero-cta-buttons" style="justify-content: flex-start;">
+                    <a href="rankings.html" class="btn-hero-glow-purple">
+                        🏆 查看推荐榜单
+                    </a>
+                    <a href="tutorials.html" class="btn-hero-dark-glass">
+                        📖 新手入门教程
+                    </a>
+                    <a href="javascript:void(0);" onclick="alert('请按 Ctrl+D (Mac用户 Cmd+D) 即可将本站添加至浏览器书签！');" class="btn-hero-dark-solid">
+                        ⭐ 收藏本站
+                    </a>
+                </div>
+            </section>
+
+            <!-- ══ 新手必看：购买机场前你必须知道的事 (图一板块高保真融入) ══ -->
+            <section class="buyer-guide-section">
+                <div class="buyer-guide-subtitle">新手必看</div>
+                <h2 class="buyer-guide-title">购买机场前，你必须知道的事</h2>
+
+                <div class="buyer-cards-grid">
+                    <!-- 1: 坚持月付 -->
+                    <div class="buyer-card-item">
+                        <div class="buyer-card-icon">📅</div>
+                        <h3 class="buyer-card-heading">坚持月付</h3>
+                        <p class="buyer-card-desc">
+                            机场行业风险高，跑路随时可能发生。月付虽然单价稍贵，但可将单次损失控制在最低。切勿一次性充值年费大套餐。
+                        </p>
+                    </div>
+
+                    <!-- 2: 备用机场必备 -->
+                    <div class="buyer-card-item">
+                        <div class="buyer-card-icon">🔄</div>
+                        <h3 class="buyer-card-heading">备用机场必备</h3>
+                        <p class="buyer-card-desc">
+                            永远不要只用一家机场。准备 2-3 家不同价位的机场，主力+备用搭配使用，避免单点故障时完全断网。
+                        </p>
+                    </div>
+
+                    <!-- 3: 晚高峰才是真相 -->
+                    <div class="buyer-card-item">
+                        <div class="buyer-card-icon">🌙</div>
+                        <h3 class="buyer-card-heading">晚高峰才是真相</h3>
+                        <p class="buyer-card-desc">
+                            机场测速一定要在晚上 8-11 点测试。白天速度任何机场都快，晚高峰的表现才真实反映线路质量。
+                        </p>
+                    </div>
+
+                    <!-- 4: 注册保护隐私 -->
+                    <div class="buyer-card-item">
+                        <div class="buyer-card-icon">🔒</div>
+                        <h3 class="buyer-card-heading">注册保护隐私</h3>
+                        <p class="buyer-card-desc">
+                            使用 Gmail 或 ProtonMail 等境外邮箱注册机场账号，支付时尽量使用支付宝或微信的匿名方式，保护个人信息。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ 常见问题：选机场前，先看这 6 个问题 (图一/图二/图三高保真融入) ══ -->
+            <section class="faq-section">
+                <div class="faq-header-center">
+                    <div class="faq-subtitle">常见问题</div>
+                    <h2 class="faq-main-title">选机场前，先看这 6 个问题</h2>
+                    <p class="faq-desc-line">真实疑问，直接回答，不绕弯子。</p>
+                </div>
+
+                <!-- 分类一：机场是什么与基础概念 -->
+                <div class="faq-category-title">一、机场是什么与基础概念</div>
+                <div class="faq-accordion-list">
+                    <!-- Q1: 机场是什么？ -->
+                    <div class="faq-card-item active">
+                        <div class="faq-question-head">
+                            <span>Q: 机场是什么？</span>
+                            <span class="faq-toggle-icon">−</span>
+                        </div>
+                        <div class="faq-answer-body">
+                            简单说，机场就是卖代理节点订阅的服务商。你付费买一个套餐，拿到一条订阅链接，导入 Clash、Shadowrocket 这类客户端就能用了。名字的由来据说是早期 V2Ray 客户端图标是纸飞机，慢慢就把此类服务商形象地称为“机场”。
+                        </div>
+                    </div>
+
+                    <!-- Q2: 机场和 VPN 有什么区别？ -->
+                    <div class="faq-card-item active">
+                        <div class="faq-question-head">
+                            <span>Q: 机场和 VPN 有什么区别？</span>
+                            <span class="faq-toggle-icon">−</span>
+                        </div>
+                        <div class="faq-answer-body">
+                            两者要解决的都是科学上网问题，但产品形态不同。传统 VPN（如 ExpressVPN）通常提供单一固定官方客户端和全局流量加密；而机场卖的是“订阅链接”，你可以自由选择第三方开源客户端、自主切换节点，且支持国内应用直连、国外流量代理的智能分流。
+                        </div>
+                    </div>
+
+                    <!-- Q3: 机场和梯子是一回事吗？ -->
+                    <div class="faq-card-item active">
+                        <div class="faq-question-head">
+                            <span>Q: 机场和梯子是一回事吗？</span>
+                            <span class="faq-toggle-icon">−</span>
+                        </div>
+                        <div class="faq-answer-body">
+                            不完全是。“梯子”是所有翻墙工具的通用统称，而“机场”是目前最主流、使用人数最多的一种商业梯子形态（此外还有自建 VPS 节点、商用 VPN 等）。
+                        </div>
+                    </div>
+
+                    <!-- Q4: 买机场和自己搭建节点哪个好？ -->
+                    <div class="faq-card-item">
+                        <div class="faq-question-head">
+                            <span>Q: 买机场和自己搭建节点哪个好？</span>
+                            <span class="faq-toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer-body">
+                            对于绝大多数非技术用户，购买机场性价比和稳定性远高于自建。自建 VPS 个人成本高（单台服务器月费不少于 $5）、IP 易被封锁且无晚高峰 IEPL 专线加速；而机场拥有数十条多国专线节点与专业运维。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分类二：新手怎么选机场 -->
+                <div class="faq-category-title" style="margin-top: 36px;">二、新手怎么选机场</div>
+                <div class="faq-accordion-list">
+                    <!-- Q5: 新手挑选机场应该看哪些核心因素？ -->
+                    <div class="faq-card-item active">
+                        <div class="faq-question-head">
+                            <span>Q: 新手挑选机场应该看哪些核心因素？</span>
+                            <span class="faq-toggle-icon">−</span>
+                        </div>
+                        <div class="faq-answer-body">
+                            核心关注 5 点：晚高峰（20:00-23:00）稳不稳定、线路拓扑（中转还是 IEPL 专线）、流媒体和 AI 工具解锁情况、资费是否合理（是否有月付），以及服务商的运营时长与口碑。
+                        </div>
+                    </div>
+
+                    <!-- Q6: 机场购买前要注意什么？ -->
+                    <div class="faq-card-item active">
+                        <div class="faq-question-head">
+                            <span>Q: 机场购买前要注意什么？</span>
+                            <span class="faq-toggle-icon">−</span>
+                        </div>
+                        <div class="faq-answer-body">
+                            建议首选支持“月付”或“小额试用”的套餐。首次购买切勿直接买年付，先花小钱验证晚高峰体验、客服响应和节点解锁情况，满意后再考虑长期套餐。另外记得保存官网的备用域名。
+                        </div>
+                    </div>
+
+                    <!-- Q7: 机场新手最容易踩哪些坑？ -->
+                    <div class="faq-card-item active">
+                        <div class="faq-question-head">
+                            <span>Q: 机场新手最容易踩哪些坑？</span>
+                            <span class="faq-toggle-icon">−</span>
+                        </div>
+                        <div class="faq-answer-body">
+                            最典型的是一上来就买年付甚至更长周期套餐，结果用了一周发现晚高峰卡顿无法使用；其次是被“终身不限流量包”等噱头吸引，忽视了服务商的运营资历与风险。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 公告与预警 Grid -->
+            <div class="notice-row">
+                <div class="notice-card">
+                    <div class="notice-card-header" style="color: var(--accent-teal);">
+                        <span>🔔 最新快讯与上线</span>
+                    </div>
+                    <div class="notice-item">
+                        <span>🛡️ 快狸登顶 2026 推荐榜 No.1：IEPL 全专线极致稳定</span>
+                        <span style="font-family: var(--font-code); font-size: 0.75rem;">TOP 1</span>
+                    </div>
+                    <div class="notice-item">
+                        <span>🚀 光年梯更新测评：老牌大流量 BGP 中转优化</span>
+                        <span style="font-family: var(--font-code); font-size: 0.75rem;">HOT</span>
+                    </div>
+                    <div class="notice-item">
+                        <span>⚡ 速界与极连云上榜：Hysteria 2 / IPLC 专线全面加入</span>
+                        <span style="font-family: var(--font-code); font-size: 0.75rem;">NEW</span>
+                    </div>
+                </div>
+
+                <div class="notice-card">
+                    <div class="notice-card-header" style="color: var(--accent-rose);">
+                        <span>⚠️ 防跑路原则与预警</span>
+                    </div>
+                    <div class="notice-item">
+                        <span>① 坚持按月订阅，严禁一次性买断长期套餐</span>
+                        <span style="color: var(--accent-rose);">核心</span>
+                    </div>
+                    <div class="notice-item">
+                        <span>② 始终保持 2 家以上不同线路的备用节点</span>
+                        <span style="color: var(--accent-orange);">建议</span>
+                    </div>
+                    <div class="notice-item">
+                        <span>③ 单次充值金额建议控制在 100 元以内</span>
+                        <span style="color: var(--accent-teal);">提示</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- 页脚 -->
+            <footer class="site-footer">
+                <p>閫煎摜鏈哄満娴嬭瘎 (閫煎摜鏈哄満 Lab) · 专注高品质加速测评</p>
+                <p style="margin-top: 6px;">本站所有测评均基于真实网络环境测试，不保证第三方服务永久可用性。</p>
+            </footer>
+        </main>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+

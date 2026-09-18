@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor AI 编程代理与中转 API 配置教程 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="2026年最新 Cursor AI 智能编辑器自定义 API 密钥、中转 Base URL 填入、Claude 3.5 Sonnet 与 GPT-4o 高效写代码配置指南。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.8;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+        }
+        .step-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .step-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+        .cta-inner-box {
+            background: rgba(197, 160, 89, 0.06);
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            margin: 28px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">👈</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../tutorials.html" class="nav-item active">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="../wiki.html" class="nav-item">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>Cursor · AI 编程代理配置指南</h2>
+            <a href="../tutorials.html" class="btn-sm-ghost">返回教程列表</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>💻 Cursor 编辑器 AI 编程代理与自定义 API 中转配置教程</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 7 分钟 (1240 字)</span>
+                    <span>适用工具：Cursor IDE全版本</span>
+                </div>
+
+                <p>Cursor 作为新一代爆火的 AI 驱动代码编辑器，其强大的 Tab 补全与 Composer 自动多文件重构功能深受程序员喜爱。然而，默认的官方 Pro 订阅费用较为昂贵（20美元/月），且在国内直连访问 OpenAI 或 Anthropic 服务器时常遭遇网络连接超时。通过配置网络代理或使用第三方中转 API Key，可以以极低成本实现满血编程体验。本教程为您详解全部步骤。</p>
+
+                <h2>一、网络代理环境配置（针对官方订阅用户）</h2>
+                <p>如果您已经订阅了 Cursor Pro，但在提问时频繁遇到网络连接错误，需配置全局代理：</p>
+                <div class="step-box">
+                    <div class="step-title">1. Clash Verge / NekoBox TUN 模式配置</div>
+                    <p>由于 Cursor 的内部 Node 进程有时会跳过普通的 HTTP 系统代理，建议在 Clash Verge 中启用<b>「TUN 模式 (Tun Mode)」</b>或使用 NekoBox 的 VPN 转发。这能确保所有 API 请求强制走所选的海外专线节点。</p>
+                </div>
+
+                <h2>二、使用第三方 API 密钥中转配置（低成本方案）</h2>
+                <p>若您希望按量计费，使用自备的 OpenAI Key 或第三方中转服务，请按以下步骤配置：</p>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 1：打开 Cursor 核心设置</div>
+                    <p>点击 Cursor 界面右上角齿轮图标（设置），或使用快捷键 <code>Ctrl + ,</code> (Mac 为 <code>Cmd + ,</code>)，进入 <b>Cursor Settings</b> 页面。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 2：切换至 Models 选项卡</div>
+                    <p>在左侧菜单点击 <b>Models</b>。在此处您可以看到当前支持的所有底层大语言模型（如 Claude-3.5-Sonnet、GPT-4o 等）。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 3：填写 OpenAI API Key 与 Override Base URL</div>
+                    <p>展开 <b>OpenAI API Key</b> 选项，填入您的密钥（以 <code>sk-</code> 开头）。若使用的是中转 API 服务，请打开 <code>Override OpenAI Base URL</code> 选项，输入中转站提供的 Base 地址（例如 <code>https://api.your-relay-domain.com/v1</code>），点击 Verify 完成验证。</p>
+                </div>
+
+                <h2>三、添加顶级模型与高效率编程技巧</h2>
+                <div class="step-box">
+                    <div class="step-title">1. 添加最新 Claude 3.5 Sonnet 模型</div>
+                    <p>在 Models 列表中，确保 <code>claude-3-5-sonnet</code> 处于勾选开启状态。如果在下拉框中没找到，可在输入框手动输入 <code>claude-3-5-sonnet</code> 并点击 Add Model 添加。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">2. 配合 Agent 模式加速编码</div>
+                    <p>在编辑代码时按下 <code>Ctrl + I</code> 唤出 Composer，可以直接用中文输入指令（例如：“帮我重构这个 API 路由文件并增加错误捕获”），AI 将自动在多文件间完成精准编辑。</p>
+                </div>
+
+                <div class="cta-inner-box">
+                    <h3 style="color: var(--accent-primary); font-size: 1.1rem; margin-bottom: 8px;">为 AI 编程准备最稳定的网络中转专线？</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;">推荐云图机场与极速Cloud，专线保证 API 交互毫秒级响应不断连。</p>
+                    <a href="../index.html#rankings" class="btn-sm-primary" style="display: inline-block;">查看 2026 高质量机场推荐榜 →</a>
+                </div>
+
+                <h2>四、常见报错与排查清单</h2>
+                <ul>
+                    <li><strong>401 Unauthorized 报错</strong>：说明填入的 API Key 错误或余额耗尽，请检查中转平台的额度状态。</li>
+                    <li><strong>403 IP 区域限制 (Country Unsupported)</strong>：说明您的节点被 OpenAI 封禁，请在代理客户端中切换至非香港地区（如美国、日本、新加坡）节点。</li>
+                </ul>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

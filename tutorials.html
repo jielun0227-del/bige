@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小白新手教程 - 客户端配置指南 | 逼哥机场测评</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tutorial-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .tutorial-card-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tutorial-card-box:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+            background: var(--bg-card-hover);
+        }
+        .platform-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .platform-icon {
+            font-size: 2.2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-glow);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+        .tutorial-steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 16px 0 20px;
+        }
+        .step-row {
+            display: flex;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .step-idx {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            color: #0B0F17;
+            font-size: 0.75rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/bigejichang_logo.png" alt="逼哥机场测评 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>逼哥机场测评</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">核心导航</div>
+            <a href="index.html" class="nav-item">
+                <span class="nav-item-icon">🏠</span>
+                <span>网站首页</span>
+            </a>
+            <a href="rankings.html" class="nav-item">
+                <span class="nav-item-icon">🏆</span>
+                <span>机场推荐榜</span>
+            </a>
+            <a href="rankings.html#reviews" class="nav-item">
+                <span class="nav-item-icon">📝</span>
+                <span>机场测评文章</span>
+            </a>
+            
+            <div class="nav-section-title">实用指南</div>
+            <a href="tutorials.html" class="nav-item active">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="wiki.html" class="nav-item">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+            <a href="vpn-proxy.html" class="nav-item">
+                <span class="nav-item-icon">🌐</span>
+                <span>科学上网</span>
+            </a>
+
+            <div class="nav-section-title">关于本站</div>
+            <a href="about.html" class="nav-item">
+                <span class="nav-item-icon">ℹ️</span>
+                <span>关于我们</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>📖 小白新手教程 · 各平台客户端配置指南</h2>
+            <a href="index.html" class="btn-sm-ghost">返回首页</a>
+        </header>
+
+        <main class="content-body">
+            <div class="page-hero">
+                <div class="hero-gradient-orb"></div>
+                <div class="hero-title-group">
+                    <h2>全平台 <span>科学上网客户端</span> 配置指南</h2>
+                    <p>图文详解，从零开始，10 分钟搞定订阅导入与分流规则配置，覆盖 Windows, iOS, Android, macOS 及 Linux。</p>
+                </div>
+            </div>
+
+            <div class="tutorial-grid-modern">
+                <!-- Windows Clash Verge -->
+                <div class="tutorial-card-box">
+                    <div>
+                        <div class="platform-badge">
+                            <div class="platform-icon">🪟</div>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">Windows · Clash Verge Rev</h3>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">最主流 Windows 客户端 · 支持规则分流</span>
+                            </div>
+                        </div>
+                        <div class="tutorial-steps-list">
+                            <div class="step-row"><span class="step-idx">1</span><span>前往 GitHub 下载最新版 Clash Verge Rev 安装包</span></div>
+                            <div class="step-row"><span class="step-idx">2</span><span>安装完成后，点击左侧栏<b>「订阅」</b>菜单</span></div>
+                            <div class="step-row"><span class="step-idx">3</span><span>粘贴机场提供的<b>订阅链接</b>，点击导入与更新</span></div>
+                            <div class="step-row"><span class="step-idx">4</span><span>切换到<b>「代理」</b>选择合适节点，开启系统代理</span></div>
+                        </div>
+                    </div>
+                    <a href="articles/tutorial-clash-verge.html" class="btn-sm-primary" style="text-align: center;">查看详细图文教程 →</a>
+                </div>
+
+                <!-- iOS Shadowrocket -->
+                <div class="tutorial-card-box">
+                    <div>
+                        <div class="platform-badge">
+                            <div class="platform-icon">🍎</div>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">iOS · Shadowrocket (小火箭)</h3>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">iOS 最流行代理工具 · 需外区 Apple ID</span>
+                            </div>
+                        </div>
+                        <div class="tutorial-steps-list">
+                            <div class="step-row"><span class="step-idx">1</span><span>切换至美区/港区 Apple ID，在 App Store 购买下载</span></div>
+                            <div class="step-row"><span class="step-idx">2</span><span>打开 App，点击右上角<b>「+」</b>号添加配置</span></div>
+                            <div class="step-row"><span class="step-idx">3</span><span>类型选择 <b>Subscribe</b>，粘贴机场订阅链接</span></div>
+                            <div class="step-row"><span class="step-idx">4</span><span>首页开启连接开关，允许添加 VPN 权限即可</span></div>
+                        </div>
+                    </div>
+                    <a href="articles/tutorial-shadowrocket.html" class="btn-sm-primary" style="text-align: center;">查看详细图文教程 →</a>
+                </div>
+
+                <!-- Android NekoBox -->
+                <div class="tutorial-card-box">
+                    <div>
+                        <div class="platform-badge">
+                            <div class="platform-icon">🤖</div>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">Android · NekoBox</h3>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">开源免费 · 支持 Hysteria2 / VLESS 等协议</span>
+                            </div>
+                        </div>
+                        <div class="tutorial-steps-list">
+                            <div class="step-row"><span class="step-idx">1</span><span>下载安装 NekoBox APK 并给予基本权限</span></div>
+                            <div class="step-row"><span class="step-idx">2</span><span>点击右上角菜单 → <b>「从剪贴板导入」</b></span></div>
+                            <div class="step-row"><span class="step-idx">3</span><span>或在<b>「订阅」</b>分组添加机场 URL 链接</span></div>
+                            <div class="step-row"><span class="step-idx">4</span><span>选中可用节点，点击右下角 ▶ 按钮启动连接</span></div>
+                        </div>
+                    </div>
+                    <a href="articles/tutorial-nekobox.html" class="btn-sm-primary" style="text-align: center;">查看详细图文教程 →</a>
+                </div>
+
+                <!-- macOS ClashX Meta -->
+                <div class="tutorial-card-box">
+                    <div>
+                        <div class="platform-badge">
+                            <div class="platform-icon">🖥️</div>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">macOS · ClashX Meta</h3>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Mac 菜单栏常驻工具 · 快速切换节点</span>
+                            </div>
+                        </div>
+                        <div class="tutorial-steps-list">
+                            <div class="step-row"><span class="step-idx">1</span><span>下载安装 ClashX Meta，打开配置托管页面</span></div>
+                            <div class="step-row"><span class="step-idx">2</span><span>粘贴机场订阅链接，点击<b>「更新」</b>下载节点</span></div>
+                            <div class="step-row"><span class="step-idx">3</span><span>勾选<b>「设置为系统代理」</b>并选择节点模式</span></div>
+                        </div>
+                    </div>
+                    <a href="articles/tutorial-clashx-meta.html" class="btn-sm-primary" style="text-align: center;">查看详细图文教程 →</a>
+                </div>
+
+                <!-- iOS ClashMi -->
+                <div class="tutorial-card-box">
+                    <div>
+                        <div class="platform-badge">
+                            <div class="platform-icon">📱</div>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">iOS · ClashMi</h3>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">iOS 新兴免费客户端 · 原生支持 Clash 内核</span>
+                            </div>
+                        </div>
+                        <div class="tutorial-steps-list">
+                            <div class="step-row"><span class="step-idx">1</span><span>App Store 搜索 ClashMi 免费下载安装</span></div>
+                            <div class="step-row"><span class="step-idx">2</span><span>点击底部<b>「订阅」</b> → 右上角<b>「+」</b>号</span></div>
+                            <div class="step-row"><span class="step-idx">3</span><span>选择<b>「从 URL 导入」</b>并粘贴机场链接</span></div>
+                            <div class="step-row"><span class="step-idx">4</span><span>回到首页开启 VPN 开关即可畅快使用</span></div>
+                        </div>
+                    </div>
+                    <a href="articles/tutorial-clashmi.html" class="btn-sm-primary" style="text-align: center;">查看详细图文教程 →</a>
+                </div>
+
+                <!-- Cursor AI 配置 -->
+                <div class="tutorial-card-box">
+                    <div>
+                        <div class="platform-badge">
+                            <div class="platform-icon">💻</div>
+                            <div>
+                                <h3 style="font-size: 1.15rem;">Cursor · AI 编程代理配置</h3>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">自定义中转 API 密钥 · 低成本畅快编程</span>
+                            </div>
+                        </div>
+                        <div class="tutorial-steps-list">
+                            <div class="step-row"><span class="step-idx">1</span><span>打开 Cursor 设置 → <b>Models</b> 选项卡</span></div>
+                            <div class="step-row"><span class="step-idx">2</span><span>启用 OpenAI API Key，填入中转 Key 与 Base URL</span></div>
+                            <div class="step-row"><span class="step-idx">3</span><span>添加 claude-3-5-sonnet 模型即可体验高效率写代码</span></div>
+                        </div>
+                    </div>
+                    <a href="articles/tutorial-cursor.html" class="btn-sm-primary" style="text-align: center;">查看详细图文教程 →</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

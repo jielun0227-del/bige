@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android NekoBox 详细配置指南 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="2026年最新 Android 平台通用开源代理工具 NekoBox 安装、订阅导入、Hysteria2/VLESS 节点使用与路由分流配置全教程。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.8;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+        }
+        .step-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .step-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+        .cta-inner-box {
+            background: rgba(197, 160, 89, 0.06);
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            margin: 28px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">👈</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../tutorials.html" class="nav-item active">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="../wiki.html" class="nav-item">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>Android · NekoBox 详细配置指南</h2>
+            <a href="../tutorials.html" class="btn-sm-ghost">返回教程列表</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>🤖 Android 平台开源神器 NekoBox 零基础安装与订阅配置教程</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 7 分钟 (1220 字)</span>
+                    <span>适用系统：Android 8.0 及以上</span>
+                </div>
+
+                <p>随着原版 Clash for Android (CFA) 的停止维护，NekoBox (猫盒) 已迅速成长为安卓端最受欢迎的开源科学上网工具。基于 sing-box 内核的强大底层，NekoBox 原生支持 VLESS、Hysteria2、TUIC v5 等先进代理协议。本文将为您详细拆解 NekoBox 的下载、订阅导入与优化设置。</p>
+
+                <h2>一、软件下载与架构选择</h2>
+                <p>在安卓设备上使用 NekoBox，请确保从可靠渠道获取安装包：</p>
+                <div class="step-box">
+                    <div class="step-title">1. GitHub Release 官方版本</div>
+                    <p>访问 NekoBox GitHub 开源发布页。大多数现代安卓手机（如高通骁龙、天玑处理器）请下载 <code>NekoBox-arm64-v8a.apk</code>；若使用的是较旧的 32 位设备，请下载 <code>armeabi-v7a</code> 版本。安装时请勾选允许“未知来源应用安装”。</p>
+                </div>
+
+                <h2>二、机场订阅链接导入步骤</h2>
+                <p>完成安装并打开 NekoBox 后，可以通过以下流程轻松导入代理节点：</p>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 1：复制订阅 URL</div>
+                    <p>登录您的服务提供商（例如云图机场或宝云）后台，找到通用订阅链接或 Sing-box 订阅链接并复制到手机剪贴板。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 2：添加订阅分组</div>
+                    <p>打开 NekoBox，点击左上角<b>三条杠菜单</b>，选择<b>「分组」</b>选项。点击右上角<b>「+」</b>号，输入分组名称（如“云图专线”），在【分组类型】中选择 <b>订阅</b>，随后将剪贴板中的链接粘贴至【订阅链接】栏并保存。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">步骤 3：更新与获取节点</div>
+                    <p>回到分组列表卡片，点击右侧的<b>刷新按钮（或右上角菜单中的更新订阅）</b>。稍等数秒，系统将自动拉取最新的代理节点列表。</p>
+                </div>
+
+                <h2>三、节点选择与分流连接</h2>
+                <div class="step-box">
+                    <div class="step-title">1. 节点真连接延迟测试</div>
+                    <p>返回软件首页，点击右上角⚡图标进行<b>「TcpPing」</b>或<b>「URL Test (真连接测试)」</b>，以便剔除无效节点，选出当前延迟最低的优质线路。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">2. 启动代理与授权</div>
+                    <p>点击您心仪的节点，然后点击右下角的<b>▶ 运行按钮</b>。首次运行时，系统将弹出“构建 VPN 连接”提示框，点击允许即可开始顺畅上网。</p>
+                </div>
+
+                <div class="cta-inner-box">
+                    <h3 style="color: var(--accent-primary); font-size: 1.1rem; margin-bottom: 8px;">想体验基于 Hysteria2 协议的极速连接？</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;">配合 NekoBox 使用最新协议，即使在弱网环境下也能爆发千兆带宽。</p>
+                    <a href="../index.html#rankings" class="btn-sm-primary" style="display: inline-block;">查看 2026 高质量机场推荐榜 →</a>
+                </div>
+
+                <h2>四、常见问题排查与优化技巧</h2>
+                <ul>
+                    <li><strong>开启应用分流（Split Tunneling）</strong>：在侧边栏设置中选择「应用代理」，您可以指定仅让外网软件（如 Telegram、YouTube）走代理，国产生命周期软件（如微信、淘宝）直连。</li>
+                    <li><strong>耗电量优化</strong>：在设置中关掉不必要的日志输出（LogLevel 设置为 Warning 或 Error），可显著降低后台运行时的 CPU 占用。</li>
+                </ul>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

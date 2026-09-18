@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Shadowrocket (小火箭) 详细配置教程 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <meta name="description" content="2026年最新 iOS 平台 Shadowrocket (小火箭) 节点添加、订阅导入、分流规则配置与常见问题解决全流程详解。">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.8;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+        }
+        .step-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .step-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+        .cta-inner-box {
+            background: rgba(197, 160, 89, 0.06);
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            margin: 28px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">👈</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../tutorials.html" class="nav-item active">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="../wiki.html" class="nav-item">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>iOS · Shadowrocket 详细配置指南</h2>
+            <a href="../tutorials.html" class="btn-sm-ghost">返回教程列表</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>🍎 iOS 平台 Shadowrocket (小火箭) 零基础上手与配置教程</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 7 分钟 (1250 字)</span>
+                    <span>适用系统：iOS / iPadOS 15.0+</span>
+                </div>
+
+                <p>Shadowrocket（俗称小火箭）是苹果 iOS 平台上最强大且历史悠久的规则代理客户端之一。由于国区 App Store 的限制，新手在使用小火箭前需要了解准备外区 Apple ID 购买下载、导入订阅链接以及正确设置全局或规则分流模式。本教程将以 1200 字左右的详尽说明，帮助您一步到位搞定所有配置。</p>
+
+                <h2>一、应用获取与准备工作</h2>
+                <p>在开始配置之前，您需要先将软件下载安装到您的 iPhone 或 iPad 设备中：</p>
+                <div class="step-box">
+                    <div class="step-title">1. 获取外区 Apple ID</div>
+                    <p>小火箭已在大陆区 App Store 下架。请在 App Store 退出现有国区账号，登录美区或港区 Apple ID，并在商店中搜索 <code>Shadowrocket</code> 进行购买（售价约为 $2.99）。注意：切勿在系统「设置」中登录他人 Apple ID，仅在 App Store 登录即可。</p>
+                </div>
+
+                <h2>二、三种常用订阅导入方式</h2>
+                <p>成功安装小火箭后，可以通过以下三种极其便捷的方式将机场节点引入软件中：</p>
+
+                <div class="step-box">
+                    <div class="step-title">方式 1：一键订阅导入（推荐）</div>
+                    <p>在手机 Safari 浏览器中登录您的加速机场后台（如云图机场或九云机场），在仪表盘找到「一键导入 Shadowrocket / 小火箭」按钮。点击后会自动调起小火箭 App 并完成节点同步。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">方式 2：手动粘贴 URL 链接</div>
+                    <p>若一键导入未响应，请在机场后台复制 Clash 或 V2Ray 订阅链接。打开小火箭，点击右上角<b>「+」</b>号，将【类型】切换为 <b>Subscribe</b>，在【URL】栏粘贴复制的链接，随后点击右上角<b>「保存」</b>。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">方式 3：二维码扫码导入</div>
+                    <p>如果是在电脑端查看机场页面，可点击小火箭首页左上角的<b>扫码图标</b>，直接扫描电脑屏幕上的机场订阅二维码即可快速完成添加。</p>
+                </div>
+
+                <h2>三、分流模式与节点连接</h2>
+                <p>导入订阅后，列表会显示数十个甚至数百个节点。正确的使用方法如下：</p>
+                <ul>
+                    <li><strong>测试延迟</strong>：点击「延迟测试」或「Connectivity Test」，挑选延迟较低且丢包率少的节点。</li>
+                    <li><strong>选择全局路由</strong>：将路由模式保持为<b>「配置 (Config)」</b>模式。在此模式下，小火箭将根据预设规则实现“国内直连、国外代理”，既节省流量又保证国内应用访问速度。</li>
+                    <li><strong>开启连接</strong>：打开最顶部的第一项<b>「未连接/已连接」</b>主开关。首次开启时，iOS 系统会弹出授权提示，请输入手机解锁密码允许添加 VPN 配置。</li>
+                </ul>
+
+                <div class="cta-inner-box">
+                    <h3 style="color: var(--accent-primary); font-size: 1.1rem; margin-bottom: 8px;">寻找配合小火箭的最佳专线机场？</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;">小火箭结合金融级 IEPL 专线可实现极致低延迟与原生流媒体解锁。</p>
+                    <a href="../index.html#rankings" class="btn-sm-primary" style="display: inline-block;">查看 2026 高质量机场推荐榜 →</a>
+                </div>
+
+                <h2>四、进阶技巧与常见疑难解答</h2>
+                <div class="step-box">
+                    <div class="step-title">1. HTTPS 局部解密与 MITM</div>
+                    <p>如需开启某些重写脚本（如去除广告或软件解锁），需在小火箭「配置」-「远程文件」中安装 CA 证书并前往 iOS 系统设置-通用-关于本机中启用证书信任。</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">2. 连接成功但无法打开网页？</div>
+                    <p>请首先检查机场订阅是否到期或流量耗尽。其次检查小火箭「设置」中的 DNS 是否被污染，建议开启 UDP 转发或设置为公网公共 DNS（如 223.5.5.5 和 1.1.1.1）。</p>
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+

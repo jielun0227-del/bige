@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>什么是机场？代理中转与节点基础概念科普 - </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.85;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+        }
+        .concept-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .concept-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt=" Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <h1></h1>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-item-icon">👈</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../tutorials.html" class="nav-item">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="../wiki.html" class="nav-item active">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科 · 什么是机场？基本概念解析</h2>
+            <a href="../wiki.html" class="btn-sm-ghost">返回百科首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>✈️ 什么是机场？新手必备的代理中转与节点基础概念科普</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-09-16</span>
+                    <span>阅读时间：约 6 分钟 (1100 字)</span>
+                    <span>所属分类：新手入门必读</span>
+                </div>
+
+                <p>在网络科学上网与加速的语境中，很多刚入门的用户常被“机场”、“中转”、“节点”、“订阅”等名词搞得一头雾水。本文将用最通俗易懂的语言，全面拆解这些核心概念，帮助新手避开认知误区。</p>
+
+                <h2>一、“机场”这个词从何而来？</h2>
+                <p>“机场”并不是指真正的航空机场，而是一种俗称。起源于早期流行的开源代理协议 <b>Shadowsocks (SS)</b>，其软件图标是一只小纸飞机。随着后来专门提供该协议订阅服务的服务商大量出现，大家便形象地把这些“托管纸飞机的服务网站”称作“机场”。</p>
+
+                <div class="concept-card">
+                    <div class="concept-title">💡 核心定义</div>
+                    <p>机场：指的是由专业运维团队搭建，将分布在世界各地的海外服务器节点统一封装成一个“订阅链接”，按月或按流量计费出租给用户的服务站点。</p>
+                </div>
+
+                <h2>二、机场的核心构成：节点、中转与专线</h2>
+                <p>决定一个机场好不好用、稳定不稳定的关键在于其服务器线路架构：</p>
+                <ul>
+                    <li><strong>直连节点 (Direct Connection)</strong>：您的电脑直接连接位于海外（如香港、东京）的服务器。价格极其廉价，但遇到晚高峰网络拥堵或 GFW 干扰时，丢包率极高。</li>
+                    <li><strong>BGP/公网中转节点 (Relay Node)</strong>：机场在境内租用高性能中转服务器（如广州、上海服务器），用户先连接境内中转机，再由中转机加密传输给海外目标机。大大提升了稳定性。</li>
+                    <li><strong>IPLC / IEPL 跨境专线 (Private Line)</strong>：企业级内网专线，数据直接走海底物理光缆传输，不经过防火墙公网检视。延迟极低、连通率高达 99.9%，且绝不跑路被封锁。</li>
+                </ul>
+
+                <h2>三、VPN 与 机场 有什么区别？</h2>
+                <p>许多新手容易混淆传统 VPN（如 ExpressVPN、NordVPN）与机场的区别：</p>
+                <div class="concept-card">
+                    <div class="concept-title">🔍 传统 VPN vs 机场订阅</div>
+                    <p>传统 VPN 原本设计用于企业员工远程访问公司内网，特征明显容易被识别封锁；而现代机场采用 Shadowsocks、Trojan、VLESS 或 Hysteria2 协议，具备强大的 TLS 指纹伪装与抗封锁能力，且支持通过 Clash 等客户端实现“国内直连、国外代理”的智能分流。</p>
+                </div>
+
+                <h2>四、给新手选购机场的 3 条避坑忠告</h2>
+                <ol>
+                    <li><b>坚持月付原则</b>：切勿因年付折扣诱人而一次性充值数百元，谨防跑路风险。</li>
+                    <li><b>准备备用节点</b>：主力机场建议选择专线中转，同时准备一家廉价备用机场以备不时之需。</li>
+                    <li><b>学会配置分流</b>：在客户端中务必保持“规则模式”，避免访问国内百度、淘宝时也消耗代理流量。</li>
+                </ol>
+
+                <div style="margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                    <a href="../wiki.html" class="btn-sm-primary">← 返回科普百科目录</a>
+                    <a href="../tutorials.html" class="btn-sm-ghost" style="margin-left: 10px;">去查看客户端配置教程 →</a>
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
+
