@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLS 指纹识别与对抗技术演进 - </title>
     <meta name="description" content="2026年最新 TLS Client Hello 握手指纹识别、uTLS 伪装技术、uTLS / REALITY 对抗防火墙演进原理。">
+    <link rel="canonical" href="https://bigejichang.vip/articles/wiki-tls-fingerprint">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TLS 指纹识别与对抗技术演进 -">
+    <meta property="og:description" content="2026年最新 TLS Client Hello 握手指纹识别、uTLS 伪装技术、uTLS / REALITY 对抗防火墙演进原理。">
+    <meta property="og:url" content="https://bigejichang.vip/articles/wiki-tls-fingerprint">
+    <meta property="og:image" content="https://bigejichang.vip/images/bigejichang_logo.png">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .article-card-main { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 36px; line-height: 1.85; }
@@ -21,25 +28,25 @@
         <div class="sidebar-header">
             <img src="../images/bigejichang_logo.png" alt=" Logo" class="sidebar-brand-img">
             <div class="sidebar-brand">
-                <h1></h1>
+                <div class="sidebar-brand-title">逼哥机场测评</div>
             </div>
         </div>
         <nav class="sidebar-nav">
             <div class="nav-section-title">核心导航</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>网站首页</span></a>
-            <a href="../rankings.html" class="nav-item"><span class="nav-item-icon">🏆</span><span>机场推荐榜</span></a>
+            <a href="../" class="nav-item"><span class="nav-item-icon">🏠</span><span>网站首页</span></a>
+            <a href="../rankings" class="nav-item"><span class="nav-item-icon">🏆</span><span>机场推荐榜</span></a>
             <div class="nav-section-title">实用指南</div>
-            <a href="../tutorials.html" class="nav-item"><span class="nav-item-icon">📖</span><span>小白新手教程</span></a>
-            <a href="../wiki.html" class="nav-item active"><span class="nav-item-icon">🔬</span><span>科普百科全书</span></a>
+            <a href="../tutorials" class="nav-item"><span class="nav-item-icon">📖</span><span>小白新手教程</span></a>
+            <a href="../wiki" class="nav-item active"><span class="nav-item-icon">🔬</span><span>科普百科全书</span></a>
             <div class="nav-section-title">关于本站</div>
-            <a href="../about.html" class="nav-item"><span class="nav-item-icon">ℹ️</span><span>关于我们</span></a>
+            <a href="../about" class="nav-item"><span class="nav-item-icon">ℹ️</span><span>关于我们</span></a>
         </nav>
     </aside>
 
     <div class="main-wrapper">
         <header class="top-bar">
             <h2>🔬 科普百科 · TLS 指纹识别与对抗技术演进</h2>
-            <a href="../wiki.html" class="btn-sm-ghost">返回百科首页</a>
+            <a href="../wiki" class="btn-sm-ghost">返回百科首页</a>
         </header>
 
         <main class="content-body">
@@ -51,7 +58,7 @@
                     <span>所属分类：隐私安全与前沿技术</span>
                 </div>
 
-                <p>近年来，防火墙检视技术从最初简单的 IP/SNI 阻断，演进到了深度加密流量分析与 **TLS 指纹识别 (JA3/JA4 Fingerprinting)**。了解 TLS 指纹如何暴露代理流量以及现代代理协议如何对抗它，是网络技术爱好者不可或缺的一课。</p>
+                <p>近年来，防火墙检视技术从最初简单的 IP/SNI 阻断，演进到了深度加密流量分析与 <strong>TLS 指纹识别 (JA3/JA4 Fingerprinting)</strong>。了解 TLS 指纹如何暴露代理流量以及现代代理协议如何对抗它，是网络技术爱好者不可或缺的一课。</p>
 
                 <h2>一、什么是 TLS 指纹 (JA3/JA4)？</h2>
                 <p>在建立 TLS 加密连接的第一步，客户端会发送一段未加密的 <code>Client Hello</code> 消息。该消息中包含支持的密码套件（Cipher Suites）、扩展列表、签名算法与椭圆曲线参数等。这些参数组合起来具有极高的唯一性，被称为“TLS 指纹”。</p>
@@ -66,7 +73,7 @@
                 </ul>
 
                 <div style="margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
-                    <a href="../wiki.html" class="btn-sm-primary">← 返回科普百科目录</a>
+                    <a href="../wiki" class="btn-sm-primary">← 返回科普百科目录</a>
                 </div>
             </article>
         </main>

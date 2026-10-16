@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clash分流详解：开了代理国内网站变慢？实现国内直连国外代理 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <title>Clash分流详解：开了代理国内网站变慢？实现国内直连国外代理 (2026) - 逼哥机场测评</title>
     <meta name="description" content="开了代理国内网站变慢？本文大白话讲清全局、规则与直连三种模式区别，提供最小分流配置与规则失效排查思路。">
+    <link rel="canonical" href="https://bigejichang.vip/articles/clash-split-guide">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Clash分流详解：开了代理国内网站变慢？实现国内直连国外代理 (2026) - 逼哥机场测评">
+    <meta property="og:description" content="开了代理国内网站变慢？本文大白话讲清全局、规则与直连三种模式区别，提供最小分流配置与规则失效排查思路。">
+    <meta property="og:url" content="https://bigejichang.vip/articles/clash-split-guide">
+    <meta property="og:image" content="https://bigejichang.vip/images/bigejichang_logo.png">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .article-card-main {
@@ -68,17 +75,17 @@
 <div class="app-layout">
     <aside class="sidebar">
         <div class="sidebar-header">
-            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <img src="../images/bigejichang_logo.png" alt="逼哥机场测评 Logo" class="sidebar-brand-img">
             <div class="sidebar-brand">
-                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+                <div class="sidebar-brand-title">逼哥机场测评</div>
             </div>
         </div>
         <nav class="sidebar-nav">
-            <a href="../index.html" class="nav-item">
+            <a href="../" class="nav-item">
                 <span class="nav-item-icon">🏠</span>
                 <span>返回主页</span>
             </a>
-            <a href="../vpn-proxy.html" class="nav-item">
+            <a href="../vpn-proxy" class="nav-item">
                 <span class="nav-item-icon">🌐</span>
                 <span>科学上网</span>
             </a>
@@ -88,7 +95,7 @@
     <div class="main-wrapper">
         <header class="top-bar">
             <h2>文章阅读 · Clash分流与模式切换指南</h2>
-            <a href="../vpn-proxy.html" class="btn-sm-ghost">返回科学上网专区</a>
+            <a href="../vpn-proxy" class="btn-sm-ghost">返回科学上网专区</a>
         </header>
 
         <main class="content-body">
@@ -101,10 +108,10 @@
                         <span>核心概念：智能分流 / 规则模式 / GEOIP / 策略组</span>
                     </div>
 
-                    <p>许多刚接触代理客户端的新手常常遇到这种困惑：开启代理软件之后，访问 Google 或 YouTube 非常顺利，但打开百度、淘宝或 B 站等国内网站却变得异常缓慢，甚至提示加载失败。原因就在于没有正确配置**智能分流模式**。分流是 Clash 区别于经典一键 VPN 的核心优势，本文将大白话拆解分流原理与模式选择。</p>
+                    <p>许多刚接触代理客户端的新手常常遇到这种困惑：开启代理软件之后，访问 Google 或 YouTube 非常顺利，但打开百度、淘宝或 B 站等国内网站却变得异常缓慢，甚至提示加载失败。原因就在于没有正确配置<strong>智能分流模式</strong>。分流是 Clash 区别于经典一键 VPN 的核心优势，本文将大白话拆解分流原理与模式选择。</p>
 
                     <h2>一、什么是分流？一句话讲清</h2>
-                    <p>分流，就是**给流量按规则指路**：哪些流量走代理出国、哪些流量直接直连留在国内、哪些广告流量直接屏蔽。如果不做分流而使用全局代理，访问国内网站相当于从北京发出的请求绕道美国服务器再返回国内，不仅速度奇慢，还会白白消耗宝贵的机场套餐流量。</p>
+                    <p>分流，就是<strong>给流量按规则指路</strong>：哪些流量走代理出国、哪些流量直接直连留在国内、哪些广告流量直接屏蔽。如果不做分流而使用全局代理，访问国内网站相当于从北京发出的请求绕道美国服务器再返回国内，不仅速度奇慢，还会白白消耗宝贵的机场套餐流量。</p>
 
                     <h2>二、三大路由模式区别与选型法则</h2>
                     <div class="step-box">
@@ -133,7 +140,7 @@ rules:<br>
                     </div>
 
                     <h2>四、总结与使用建议</h2>
-                    <p>导入任何机场订阅后，第一件事就是确认客户端主页上的路由模式是否处于**“规则模式 (Rule)”**。做好分流不仅能保证国内网站秒开，还能为你节省一半以上的套餐流量。</p>
+                    <p>导入任何机场订阅后，第一件事就是确认客户端主页上的路由模式是否处于<strong>“规则模式 (Rule)”</strong>。做好分流不仅能保证国内网站秒开，还能为你节省一半以上的套餐流量。</p>
                 </article>
 
                 <aside class="toc-sidebar">

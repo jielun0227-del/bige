@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linux科学上网教程：mihomo命令行翻墙与机场订阅导入 (2026) - 閫煎摜鏈哄満娴嬭瘎</title>
+    <title>Linux科学上网教程：mihomo命令行翻墙与机场订阅导入 (2026) - 逼哥机场测评</title>
     <meta name="description" content="Linux怎么科学上网？2026年正确姿势是mihomo命令行客户端：机场订阅导入、systemd开机自启、终端/Git/Docker代理全流程。">
+    <link rel="canonical" href="https://bigejichang.vip/articles/linux-mihomo-guide">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Linux科学上网教程：mihomo命令行翻墙与机场订阅导入 (2026) - 逼哥机场测评">
+    <meta property="og:description" content="Linux怎么科学上网？2026年正确姿势是mihomo命令行客户端：机场订阅导入、systemd开机自启、终端/Git/Docker代理全流程。">
+    <meta property="og:url" content="https://bigejichang.vip/articles/linux-mihomo-guide">
+    <meta property="og:image" content="https://bigejichang.vip/images/bigejichang_logo.png">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .article-card-main {
@@ -68,17 +75,17 @@
 <div class="app-layout">
     <aside class="sidebar">
         <div class="sidebar-header">
-            <img src="../images/bigejichang_logo.png" alt="閫煎摜鏈哄満娴嬭瘎 Logo" class="sidebar-brand-img">
+            <img src="../images/bigejichang_logo.png" alt="逼哥机场测评 Logo" class="sidebar-brand-img">
             <div class="sidebar-brand">
-                <h1>閫煎摜鏈哄満娴嬭瘎</h1>
+                <div class="sidebar-brand-title">逼哥机场测评</div>
             </div>
         </div>
         <nav class="sidebar-nav">
-            <a href="../index.html" class="nav-item">
+            <a href="../" class="nav-item">
                 <span class="nav-item-icon">🏠</span>
                 <span>返回主页</span>
             </a>
-            <a href="../vpn-proxy.html" class="nav-item">
+            <a href="../vpn-proxy" class="nav-item">
                 <span class="nav-item-icon">🌐</span>
                 <span>科学上网</span>
             </a>
@@ -88,7 +95,7 @@
     <div class="main-wrapper">
         <header class="top-bar">
             <h2>文章阅读 · Linux科学上网教程</h2>
-            <a href="../vpn-proxy.html" class="btn-sm-ghost">返回科学上网专区</a>
+            <a href="../vpn-proxy" class="btn-sm-ghost">返回科学上网专区</a>
         </header>
 
         <main class="content-body">
@@ -101,10 +108,10 @@
                         <span>适用环境：Linux VPS / Ubuntu / Debian / WSL / 无桌面环境</span>
                     </div>
 
-                    <p>在 Linux 服务器或 WSL 环境中，敲下 <code>git clone</code> 进度条纹丝不动，<code>docker pull</code> 频繁连接超时，或者使用 <code>pip install</code> 遭遇报错 Refused 是许多开发者常遇到的痛点。Linux 没有图形界面，而经典的原版 Clash（Dreamacro/clash）在 2023 年 11 月已被作者删库停更。2026 年在 Linux 上科学上网的**正确姿势就是采用 mihomo 命令行内核结合机场订阅**。</p>
+                    <p>在 Linux 服务器或 WSL 环境中，敲下 <code>git clone</code> 进度条纹丝不动，<code>docker pull</code> 频繁连接超时，或者使用 <code>pip install</code> 遭遇报错 Refused 是许多开发者常遇到的痛点。Linux 没有图形界面，而经典的原版 Clash（Dreamacro/clash）在 2023 年 11 月已被作者删库停更。2026 年在 Linux 上科学上网的<strong>正确姿势就是采用 mihomo 命令行内核结合机场订阅</strong>。</p>
 
                     <h2>一、避坑澄清：为什么要选择 mihomo？</h2>
-                    <p>原版 Clash 官方仓库停更后，所有基于旧版安装包的教程链接均已失效。**mihomo**（即原 Clash Meta 内核）是正统继承者，不仅完美兼容旧版的规则与 YAML 配置文件，还增加了对 Hysteria 2、VLESS 等下一代现代化代理协议的深度支持，是目前 Linux 无桌面环境下的绝佳首选。</p>
+                    <p>原版 Clash 官方仓库停更后，所有基于旧版安装包的教程链接均已失效。<strong>mihomo</strong>（即原 Clash Meta 内核）是正统继承者，不仅完美兼容旧版的规则与 YAML 配置文件，还增加了对 Hysteria 2、VLESS 等下一代现代化代理协议的深度支持，是目前 Linux 无桌面环境下的绝佳首选。</p>
 
                     <h2>二、mihomo 命令行极速部署流程</h2>
                     <div class="step-box">
