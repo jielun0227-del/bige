@@ -15,9 +15,11 @@
 3. 提交 sitemap：`https://bigejichang.vip/sitemap.xml`。
 4. 检查首页、排行榜和核心测评页的“网址检查”结果。
 
-## Bing Webmaster Tools
+## Bing Webmaster Tools & IndexNow
 
-添加域名并使用 DNS 或从 Search Console 导入，随后提交同一份 sitemap。
+- 已添加 IndexNow 验证密钥文件：`6813638fdf244605a591b21d3693136e.txt`
+- 密钥位置：`https://bigejichang.vip/6813638fdf244605a591b21d3693136e.txt`
+- 可通过执行 `powershell -ExecutionPolicy Bypass -File .\submit_indexnow.ps1` 批量将 `sitemap.xml` 中的全部页面提交给 IndexNow（自动同步至 Bing、Yandex 等搜索引擎）。
 
 ## 百度搜索资源平台
 
