@@ -1,42 +1,44 @@
-# IndexNow 批量推送脚本
-param(
-    [string]$HostName = "bigejichang.vip",
-    [string]$Key = "6813638fdf244605a591b21d3693136e",
-    [string]$SitemapPath = "sitemap.xml"
-)
+$HostName = "bigejichang.vip"
+$Key = "6813638fdf244605a591b21d3693136e"
+$SitemapPath = Join-Path $PSScriptRoot "sitemap.xml"
 
-Write-Host "正在从 $SitemapPath 读取 URL 列表..." -ForegroundColor Cyan
+Write-Host "Reading URLs from $SitemapPath..." -ForegroundColor Cyan
 
 if (-not (Test-Path $SitemapPath)) {
-    Write-Error "找不到 sitemap 文件: $SitemapPath"
+    Write-Error "Cannot find sitemap: $SitemapPath"
     exit 1
 }
 
-[xml]$sitemap = Get-Content $SitemapPath
+[xml]$sitemap = Get-Content -Raw $SitemapPath
 $urlList = @($sitemap.urlset.url.loc)
 
-Write-Host "共读取到 $($urlList.Count) 个 URL。" -ForegroundColor Cyan
+Write-Host "Total URLs loaded: $($urlList.Count)" -ForegroundColor Cyan
 
-$payload = @{
+$payloadObject = @{
     host = $HostName
     key = $Key
     keyLocation = "https://$HostName/$Key.txt"
     urlList = $urlList
-} | ConvertTo-Json -Depth 5
+}
 
+$payloadJson = $payloadObject | ConvertTo-Json -Depth 5
 $endpoint = "https://api.indexnow.org/IndexNow"
 
-Write-Host "正在向 IndexNow ($endpoint) 提交..." -ForegroundColor Yellow
+Write-Host "Submitting to IndexNow ($endpoint)..." -ForegroundColor Yellow
 
 try {
-    $response = Invoke-RestMethod -Uri $endpoint -Method Post -Body $payload -ContentType "application/json; charset=utf-8"
-    Write-Host "提交成功！" -ForegroundColor Green
+    $response = Invoke-WebRequest -Uri $endpoint -Method POST -Body $payloadJson -ContentType "application/json; charset=utf-8" -UseBasicParsing
+    Write-Host "Submission successful! HTTP Status: $($response.StatusCode)" -ForegroundColor Green
 } catch {
-    $statusCode = $_.Exception.Response.StatusCode.value__
-    if ($statusCode -eq 200 -or $statusCode -eq 202) {
-        Write-Host "提交成功！HTTP 状态码: $statusCode (已接收并排队处理)" -ForegroundColor Green
+    if ($_.Exception.Response) {
+        $statusCode = [int]$_.Exception.Response.StatusCode
+        if ($statusCode -eq 200 -or $statusCode -eq 202) {
+            Write-Host "Submission received! HTTP Status: $statusCode (Accepted / Processed)" -ForegroundColor Green
+        } else {
+            Write-Warning "IndexNow returned HTTP Status: $statusCode"
+            Write-Error $_
+        }
     } else {
-        Write-Warning "提交返回状态码: $statusCode"
-        Write-Error "详情: $_"
+        Write-Error $_
     }
 }
