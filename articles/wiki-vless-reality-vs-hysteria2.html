@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLESS-Reality 与 Hysteria 2 深度对比 - 2026主流代理协议横评 | 逼哥机场测评</title>
+    <meta name="description" content="2026年最新抗封锁与高速翻墙协议深度评测：全方位对比VLESS-Reality与Hysteria 2在TCP与UDP底层架构、弱网丢包补发、TLS伪装特征及晚高峰速度表现，助你根据网络环境选出最佳协议。">
+    <link rel="canonical" href="https://bigejichang.vip/articles/wiki-vless-reality-vs-hysteria2">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VLESS-Reality 与 Hysteria 2 深度对比 - 2026主流代理协议横评 | 逼哥机场测评">
+    <meta property="og:description" content="2026年最新抗封锁与高速翻墙协议深度评测：全方位对比VLESS-Reality与Hysteria 2在TCP与UDP底层架构、弱网丢包补发、TLS伪装特征及晚高峰速度表现，助你根据网络环境选出最佳协议。">
+    <meta property="og:url" content="https://bigejichang.vip/articles/wiki-vless-reality-vs-hysteria2">
+    <meta property="og:image" content="https://bigejichang.vip/images/bigejichang_logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-card-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            line-height: 1.85;
+        }
+        .article-card-main h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .article-card-main h2 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin: 28px 0 14px;
+            color: var(--accent-primary);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+        .article-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 16px;
+        }
+        .concept-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        .concept-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 6px;
+        }
+        .table-wrap {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px 14px;
+            text-align: left;
+        }
+        th {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/bigejichang_logo.png" alt="逼哥机场测评 Logo" class="sidebar-brand-img">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-title">逼哥机场测评</div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="../" class="nav-item">
+                <span class="nav-item-icon">👈</span>
+                <span>返回主页</span>
+            </a>
+            <a href="../rankings" class="nav-item">
+                <span class="nav-item-icon">🏆</span>
+                <span>机场推荐榜</span>
+            </a>
+            <a href="../tutorials" class="nav-item">
+                <span class="nav-item-icon">📖</span>
+                <span>小白新手教程</span>
+            </a>
+            <a href="../wiki" class="nav-item active">
+                <span class="nav-item-icon">🔬</span>
+                <span>科普百科全书</span>
+            </a>
+            <a href="../links" class="nav-item">
+                <span class="nav-item-icon">🔗</span>
+                <span>友情链接</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-bar">
+            <h2>🔬 科普百科 · VLESS-Reality 与 Hysteria 2 深度对比</h2>
+            <a href="../wiki" class="btn-sm-ghost">返回百科首页</a>
+        </header>
+
+        <main class="content-body">
+            <article class="article-card-main">
+                <h1>⚡ 2026主流翻墙协议横评：VLESS-Reality 与 Hysteria 2 深度技术对比</h1>
+                <div class="article-meta">
+                    <span>发布日期：2026-11-26</span>
+                    <span>阅读时间：约 7 分钟 (1500 字)</span>
+                    <span>所属分类：前沿技术与协议</span>
+                </div>
+
+                <p>随着深度包检测（DPI）与主动探测技术的升级，传统的代理协议（如早期的 Shadowsocks、普通 VMess）在特殊时期的抗封锁能力逐渐减弱。2026 年，科学上网领域形成了以 <strong>VLESS-Reality</strong>（TCP 阵营伪装之王）与 <strong>Hysteria 2</strong>（UDP/QUIC 阵营速度吞吐之王）为代表的两大主流协议体系。</p>
+
+                <h2>一、核心原理与关键维度对比</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性维度</th>
+                                <th>VLESS-Reality</th>
+                                <th>Hysteria 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>底层传输协议</strong></td>
+                                <td>基于标准 TCP / TLS 1.3</td>
+                                <td>基于 UDP 自定义 QUIC 协议</td>
+                            </tr>
+                            <tr>
+                                <td><strong>流量伪装机制</strong></td>
+                                <td>借用真实大厂证书（SNI 域名伪装）</td>
+                                <td>标准 TLS 加密，混淆 UDP 协议栈</td>
+                            </tr>
+                            <tr>
+                                <td><strong>抗运营商 QoS 能力</strong></td>
+                                <td>极强（完全等同于正常 HTTPS 流量）</td>
+                                <td>中等（在部分省份 UDP 可能会被 QoS 丢弃）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>高丢包弱网对抗</strong></td>
+                                <td>丢包 > 10% 时 TCP 吞吐明显衰减</td>
+                                <td>丢包 20%~30% 依然能跑满 4K 高码率视频</td>
+                            </tr>
+                            <tr>
+                                <td><strong>服务器与设备能耗</strong></td>
+                                <td>极低（零额外内存与性能损耗）</td>
+                                <td>较高（暴力重传与握手消耗 CPU/电池）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>二、VLESS-Reality 的优势与适用场景</h2>
+                <div class="concept-card">
+                    <div class="concept-title">🛡️ 优势 1：完美的真实网站伪装（SNI 借用）</div>
+                    <p>VLESS-Reality 不需要自己购买域名或申请证书，而是将外部探测流量透明代理到苹果（apple.com）、微软等真实海外大厂。审查防火墙主动探测时，返回的是合法的官方证书，因此几乎无法被主动封锁。</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-title">🏫 优势 2：适合严苛受限网络</div>
+                    <p>在校园网、企业办公网络或酒店内网，网络网关通常只放行 80/443 端口的标准 TCP 流量，并会直接拦截 UDP。此时 VLESS-Reality 拥有无可比拟的通用连通性。</p>
+                </div>
+
+                <h2>三、Hysteria 2 的优势与适用场景</h2>
+                <div class="concept-card">
+                    <div class="concept-title">🚀 优势 1：弱网与高丢包环境的救星</div>
+                    <p>Hysteria 2 基于改进版 QUIC 协议开发。在晚高峰公网海缆丢包严重时，普通 TCP 协议窗口迅速崩溃，而 Hysteria 2 会主动进行前向重传和快速探测，拉高真实吞吐。</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-title">📶 优势 2：移动 4G/5G 蜂窝数据体验极佳</div>
+                    <p>在移动网络信号抖动、基站快速切换场景下，Hysteria 2 基于连接 ID 的多径重连特性，无需重新完成繁琐握手即可无缝续传。</p>
+                </div>
+
+                <h2>四、选购与实战决策总结</h2>
+                <ul>
+                    <li><strong>优质专线/中转机场用户</strong>：首选 <strong>VLESS-Reality</strong> 或 Shadowsocks，延迟低且功耗最小，完全无被运营商 QoS 风险；</li>
+                    <li><strong>长距离便宜直连 VPS 用户</strong>：首选 <strong>Hysteria 2</strong>，能最大化榨干服务器闲置带宽，但在个别网络下建议配合端口跳跃（Port Hopping）功能使用。</li>
+                </ul>
+            </article>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
